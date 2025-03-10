@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import TechIcons from "./Icons";
 import Elipse from "../assets/Ellipse 1.png";
 import eu from "../assets/Union.png";
 import Elipse2 from "../assets/Ellipse 2.png";
 import Elipse3 from "../assets/Ellipse 3.png";
+import Projects from "./Projects";
 
 const AboutMe = () => {
   useEffect(() => {
@@ -13,10 +15,11 @@ const AboutMe = () => {
 
   // Referência para o próximo componente
   const nextSectionRef = useRef(null);
+  const nextSectionRef2 = useRef(null);
 
   // Função para rolar suavemente até o próximo componente
-  const handleScroll = () => {
-    nextSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  const handleScroll = (sectionRef) => {
+    sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   // Função para o efeito parallax
@@ -38,64 +41,62 @@ const AboutMe = () => {
 
   return (
     <>
-      {/* Seção About Me */}
-      <section className="h-screen flex flex-col justify-center items-start bg-gradient-to-bl from-purple-900 to-black p-8 relative overflow-hidden">
-        {/* Elipse 1 no canto superior direito */}
-        <img
-          src={Elipse}
-          alt="Elemento decorativo roxo"
-          className="absolute top-0 right-0 w-72 h-72 md:w-[450px] md:h-[450px] animate-pulse"
-          data-aos="fade-down"
-        />
+   <section className="min-h-screen flex flex-col md:grid md:grid-cols-2 items-center bg-gradient-to-bl from-purple-900 to-black p-8 relative overflow-hidden">
+  {/* Elipse 1 no canto superior direito */}
+  <img
+    src={Elipse}
+    alt="Elemento decorativo roxo"
+    className="absolute top-0 right-0 w-90 h-90 md:w-[800px] md:h-[800px] animate-pulse"
+    data-aos="fade-down"
+  />
 
-        {/* Imagem "eu" destacada */}
-        <div
-          className="absolute right-5 bottom-2 md:right-16 md:bottom-5 rounded-full bg-purple-500 p-4 shadow-[0px_0px_50px_15px_rgba(128,0,128,0.6)] animate-glow"
-          data-aos="zoom-in"
-        >
-          <img
-            src={eu}
-            alt="Minha foto"
-            className="w-64 h-64 md:w-[450px] md:h-[450px] rounded-full transition-transform duration-500 hover:scale-105"
-          />
-        </div>
+    <div className="max-w-6xl mt-60 px-4 text-left md:ml-8 lg:ml-16">
+      <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold text-gray-300 mb-4" data-aos="fade-right">
+        This is my <span className="text-purple-400">portfolio</span>
+      </h1>
+      <span className="text-2xl md:text-3xl lg:text-4xl text-purple-400 font-extrabold block" data-aos="fade-left">
+        About Me
+      </span>
+      <div data-aos="zoom-in">
+        <h1 className="text-2xl md:text-6xl lg:text-4xl font-bold text-gray-300 mb-2 mt-4 px-4">
+          Hello, I'm <span className="text-purple-400">Gabriel Borges</span>
+        </h1>
+        <p className="text-sm max-w-sm md:text-base lg:text-xl text-gray-400 leading-relaxed lg:max-w-3xl mb-2 md:mb-4 lg:mb-6">
+          I'm a <span className="text-purple-500"> Developer and Designer</span> based in Brazil, passionate about creating modern, functional and visually stunning digital experiences. I specialize in building interactive interfaces and I'm always improving my skills in <span className="text-purple-500"> UI/UX design and Development </span>. I love exploring new technologies and turning ideas into reality through code and design.
+        </p>
+      </div>
+      {/* Botão Saiba Mais */}
+    <button
+      className=" px-6 py-3 bg-purple-500 text-white rounded-lg text-lg font-semibold hover:bg-purple-600 transition-all"
+      onClick={() => handleScroll(nextSectionRef)}
+      data-aos="fade-up"
+    >
+      Learn More
+    </button>
+  </div>
 
-        {/* Conteúdo principal */}
-        <div className="max-w-4xl px-4 text-left">
-          <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-gray-300 mb-6" data-aos="fade-right">
-            This is my <span className="text-purple-400">portfolio</span>
-          </h1>
-          <span className="text-2xl md:text-3xl lg:text-4xl text-purple-400 font-extrabold block" data-aos="fade-left">
-            About Me
-          </span>
-          <p className="text-sm md:text-base lg:text-lg text-gray-400 leading-relaxed mt-4" data-aos="fade-up">
-            I'm a developer with a passion for creating modern, functional, and visually appealing digital experiences.
-            I enjoy working on interactive interfaces and continuously improving my skills in UI and UX design to
-            enhance user engagement and accessibility.
-          </p>
+  {/* Imagem "eu" destacada à direita */}
+  <div className=" m-10 md:order-2 md:absolute right-5 bottom-2 md:right-16 md:bottom-5 rounded-full bg-purple-500 p-4 shadow-[0px_0px_50px_15px_rgba(128,0,128,0.6)] animate-glow" data-aos="zoom-in">
+    <img
+      src={eu}
+      alt="Minha foto"
+      className="  w-32 h-32 md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full transition-transform duration-500 hover:scale-105"
+    />
+  </div>
+</section>
 
-          {/* Botão Saiba Mais */}
-          <button
-            className="mt-6 px-6 py-3 bg-purple-500 text-white rounded-lg text-lg font-semibold hover:bg-purple-600 transition-all"
-            onClick={handleScroll}
-            data-aos="fade-up"
-          >
-            Learn More
-          </button>
-        </div>
-      </section>
 
       {/* Seção de Experiência e Habilidades */}
       <section
         ref={nextSectionRef}
-        className="h-screen flex flex-col justify-center items-center bg-gradient-to-tl from-purple-900 to-black text-white p-8 relative overflow-hidden"
+        className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-tl from-purple-900 to-black text-white p-8 relative overflow-hidden"
       >
         <h2 className="text-4xl md:text-5xl font-bold mb-8 text-purple-400" data-aos="fade-down">
           Experience & Skills
         </h2>
 
         {/* Cards de Habilidades */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
           {/* Card 1 - Web Design */}
           <div
             className="p-6 bg-purple-900 rounded-lg border-2 border-purple-500 hover:border-purple-400 transition-all hover:shadow-[0_0_20px_5px_rgba(128,0,128,0.6)]"
@@ -116,8 +117,7 @@ const AboutMe = () => {
           >
             <h3 className="text-2xl font-bold text-purple-400 mb-4">UI/UX Design</h3>
             <p className="text-gray-300">
-              Passionate about designing intuitive and engaging user interfaces. Experienced in tools like Figma, Photoshop
-              and user research methodologies.
+              Passionate about crafting intuitive and engaging user experiences. Skilled in UI/UX design, leveraging tools like Figma, along with user research methodologies, marketing strategies, and conversion optimization techniques to enhance usability and business impact.
             </p>
           </div>
 
@@ -135,33 +135,31 @@ const AboutMe = () => {
           </div>
         </div>
 
-        {/* Botão de Voltar ao Topo */}
+        {/* Componente de Ícones */}
+        <div className="flex flex-col justify-center items-center m-10" data-aos="fade-up">
+          <TechIcons />
+        </div>
+
+        {/* Botão de Scroll */}
         <button
-          className="mt-8 px-6 py-3 bg-purple-500 text-white rounded-lg text-lg font-semibold hover:bg-purple-600 transition-all"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          data-aos="fade-up"
+          className="m-10 rounded-full flex items-center justify-center bg-violet-400 w-10 h-10 bottom-20 shadow-[0_0_15px_5px_rgba(128,0,128,0.5)] transition-all duration-300 cursor-pointer hover:scale-110 animate-bounce"
+          onClick={() => handleScroll(nextSectionRef2)}
         >
-          Back to Top
+          ▼
         </button>
-
-        {/* Elipse no canto inferior esquerdo */}
-        <img
-          src={Elipse2}
-          alt="Elemento decorativo roxo"
-          className="parallax absolute bottom-0 left-0 w-72 h-72 md:w-[450px] md:h-[450px] animate-pulse z-0"
-          data-aos="fade-down"
-          data-speed="0.2"
-        />
-
-        {/* Elipse no canto inferior direito */}
-        <img
-          src={Elipse3}
-          alt="Elemento decorativo roxo"
-          className="parallax absolute bottom-0 right-0 w-72 h-72 md:w-[450px] md:h-[450px] animate-pulse z-0"
-          data-aos="fade-down"
-          data-speed="0.3"
-        />
       </section>
+      <div
+  className="min-h-screen flex flex-col items-center bg-gradient-to-tr from-purple-900 to-black relative overflow-hidden"
+  ref={nextSectionRef2}
+>
+  {/* Elipse 3 no canto superior direito */}
+
+  {/* Seção de Projetos */}
+  <div className="w-full">
+    <Projects />
+  </div>
+</div>
+  
     </>
   );
 };
