@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import TechIcons from "./Icons";
 import Elipse from "../assets/Ellipse 1.png";
 import eu from "../assets/Union.png";

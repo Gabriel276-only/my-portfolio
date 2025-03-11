@@ -1,11 +1,13 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
-/** @type {import('tailwindcss').Config} */
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 
-
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "./",
+  base: './',
+  build: {
+    rollupOptions: {
+      external: ['aos', 'react-icons/fa'], // Add 'react-icons/fa' here
+    },
+  },
 });
