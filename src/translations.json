@@ -1,0 +1,60 @@
+{
+  "en": {
+    "buttons": {
+      "portuguese": "Portuguese",
+      "english": "English",
+      "learn_more": "Learn More"
+    },
+    "headings": {
+      "portfolio_intro": "This is my portfolio",
+      "about_me": "About Me",
+      "hello": "Hello, I'm"
+    },
+    "content": {
+      "introduction": "I'm a Developer and Designer based in Brazil, passionate about creating modern, functional and visually stunning digital experiences. I specialize in building interactive interfaces and I'm always improving my skills in UI/UX design and Development. I love exploring new technologies and turning ideas into reality through code and design.",
+      "skills": {
+        "web_dev": {
+          "title": "Web Development",
+          "description": "Specializing in creating visually stunning and user-friendly websites. Proficient in CSS, JavaScript, Python, and modern frameworks like React and Tailwind CSS."
+        },
+        "ui_ux_design": {
+          "title": "UI/UX Design",
+          "description": "Passionate about crafting intuitive and engaging user experiences. Skilled in UI/UX design, leveraging tools like Figma, along with user research methodologies, marketing strategies, and conversion optimization techniques to enhance usability and business impact."
+        },
+        "software_development": {
+          "title": "Software Development",
+          "description": "Aiming to transition into software development, with a focus on building scalable and efficient applications. Familiar with Python, Java, and backend technologies."
+        }
+      }
+    }
+  },
+  "pt": {
+    "buttons": {
+      "portuguese": "Português",
+      "english": "Inglês",
+      "learn_more": "Saiba Mais"
+    },
+    "headings": {
+      "portfolio_intro": "Este é meu portfolio",
+      "about_me": "Sobre Mim",
+      "hello": "Olá, eu sou "
+    },
+    "content": {
+      "introduction": "Sou um Desenvolvedor e Designer baseado no Brasil, apaixonado por criar experiências digitais modernas, funcionais e visualmente impressionantes. Especializo-me na construção de interfaces interativas e estou sempre aprimorando minhas habilidades em design UI/UX e desenvolvimento. Adoro explorar novas tecnologias e transformar ideias em realidade através do código e do design.",
+      "skills": {
+        "web_dev": {
+          "title": "Desenvolvimento Web",
+          "description": "Especializado na criação de sites visualmente impressionantes e fáceis de usar. Proficiente em CSS, JavaScript, Python e frameworks modernos como React e Tailwind CSS."
+        },
+        "ui_ux_design": {
+          "title": "Design UI/UX",
+          "description": "Apaixonado por criar experiências de usuário intuitivas e envolventes. Hábil em design UI/UX, utilizando ferramentas como Figma, além de metodologias de pesquisa de usuários, estratégias de marketing e técnicas de otimização de conversão para melhorar a usabilidade e o impacto nos negócios."
+        },
+        "software_development": {
+          "title": "Desenvolvimento de Software",
+          "description": "Com o objetivo de fazer a transição para o desenvolvimento de software, com foco na construção de aplicativos escaláveis e eficientes. Familiarizado com Python, Java e tecnologias de backend."
+        }
+      }
+    }
+  }
+}

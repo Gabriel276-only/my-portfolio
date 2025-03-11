@@ -20,8 +20,8 @@ const Projects = () => {
       <motion.img
         src={Ellipse2}
         alt="Decoração"
-        className="absolute m-2 top-0 left-0 w-40 h-40 opacity-80 md:w-80 md:h-80"
-        animate={{ y: [-10, 10, -10], rotate: 360 }}
+        className="absolute m-2 top-0 left-0 w-40 h-40 opacity-80 md:w-80 md:h-80 z-10"
+        animate={{ y: [-10, 10, -10], width: [600, 300, 600], height:[600,300,600], rotate: 360 }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", repeatType: "reverse", delay: 1 }}
       />
       <motion.img
@@ -64,7 +64,12 @@ const Projects = () => {
           </motion.a>
         ))}
       </div>
-    </section>
+
+      </section>
+      
+ 
+
+    
   );
 };
 

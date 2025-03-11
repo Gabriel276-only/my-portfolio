@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+
 
 @keyframes typing {
     from { width: 0 }
@@ -34,5 +37,10 @@
     to { opacity: 0; }
   }
 
+  .unbounded {
+    font-family: 'Unbounded', monospace;
+    font-weight: 900;
+
+  }
   
   

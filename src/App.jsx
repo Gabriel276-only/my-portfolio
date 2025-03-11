@@ -1,4 +1,5 @@
 import AboutMe from './components/about'
+import Footer from './components/footer'
 import './App.css'
 
 function App() {
@@ -6,8 +7,9 @@ function App() {
 
   return (
     
-    <div className=''>
+    <div>
       <AboutMe/>
+      <Footer/>
     </div>
     
   )
