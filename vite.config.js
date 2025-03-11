@@ -7,7 +7,7 @@ export default defineConfig({
   base: './',
   build: {
     rollupOptions: {
-      external: ['aos', 'react-icons/fa'], // Add 'react-icons/fa' here
+      external: ['aos', 'react-icons/fa', 'framer-motion'], // Add 'framer-motion' here
     },
   },
 });
