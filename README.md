@@ -68,7 +68,7 @@ Este é um componente React da seção "My Projects" do meu portfólio, apresent
 
 ## 📜 Licença
 
-Este projeto está sob a licença MIT. Sinta-se à vontade para utilizá-lo e modificá-lo como desejar.
+Sob Minha licença
 
 ---
 
