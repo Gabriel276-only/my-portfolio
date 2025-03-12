@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
-
 @keyframes typing {
     from { width: 0; }
     to { width: 12ch; } /* Ajuste de acordo com o conteúdo */
@@ -30,6 +28,7 @@
     animation: blink 0.6s ease-in-out infinite alternate;
 }
 
+
 @keyframes blink {
     0% { opacity: 1; }
     100% { opacity: 0; }
@@ -41,3 +40,7 @@
     font-size: 1rem; /* Ajusta o tamanho para telas pequenas */
   }
 }
+
+
+
+
