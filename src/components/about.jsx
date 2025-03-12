@@ -92,7 +92,7 @@ const AboutMe = () => {
       </div>
       {/* Botão Saiba Mais */}
     <button
-      className=" px-6 py-3 border-2 text-white rounded-full text-lg font-semibold hover:bg-violet-600 transition-all"
+      className=" px-6 py-3 border-2 m-5 items-center justify-center text-white rounded-full text-lg font-semibold hover:bg-violet-600 transition-all"
       onClick={() => handleScroll(nextSectionRef)}
       data-aos="fade-up"
     >
@@ -101,17 +101,17 @@ const AboutMe = () => {
   </div>
 
   {/* Imagem "eu" destacada à direita */}
-  <div className=" m-10 md:order-2 md:absolute right-5 bottom-2 md:right-16 md:bottom-5 rounded-full bg-purple-500 p-4 shadow-[0px_0px_50px_15px_rgba(128,0,128,0.6)] animate-glow" data-aos="zoom-in">
-    <img
-      src={eu}
-      alt="Minha foto"
-      className="  w-32 h-32 md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full transition-transform duration-500 hover:scale-105"
-    />
-  </div>
-</section>
+    <div  className="relative m-10 md:absolute md:right-10 lg:right-20 bottom-10 md:bottom-0 flex  justify-center md:justify-end md:w-1/2" data-aos="fade-left">
+          <img
+        src={eu}
+        alt="Minha foto"
+        className="w-32 h-32 md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full transition-transform duration-500 hover:scale-105 bg-purple-500"
+      />
+    </div>
+  </section>
 
 
-      {/* Seção de Experiência e Habilidades */}
+        {/* Seção de Experiência e Habilidades */}
       <section
         ref={nextSectionRef}
         className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-tl from-purple-900 to-black text-white p-8 relative overflow-hidden"
@@ -121,7 +121,7 @@ const AboutMe = () => {
         </h2>
 
         {/* Cards de Habilidades */}
-        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+        <div className="relative grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-6xl">
           {Object.entries(t.content.skills).map(([key, skill], index) => (
             <div
               key={key}

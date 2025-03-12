@@ -35,7 +35,7 @@ const Projects = () => {
       {/* Título fixo e visível */}
       <section className="relative flex flex-col items-center md:items-start w-full md:w-1/3">
         <div className="flex flex-1 items-center z-10 w-full justify-center md:justify-start mb-8 md:mb-0">
-          <h2 className="relative text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black text-purple-400 whitespace-nowrap md:-rotate-90">
+          <h2 className="relative mt-0 whitespace-nowrap text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black text-purple-400 md:right-80 md:-rotate-90 " data-aos="fade-right">
             MY PROJECTS
           </h2>
         </div>
