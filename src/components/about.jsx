@@ -101,7 +101,7 @@ const AboutMe = () => {
   </div>
 
   {/* Imagem "eu" destacada à direita */}
-    <div  className="relative m-10 md:absolute md:right-10 lg:right-20 bottom-10 md:bottom-0 flex  justify-center md:justify-end md:w-1/2" data-aos="fade-left">
+    <div  className="relative m-2 md:absolute md:right-10 lg:right-20 bottom-10 md:bottom-0 flex  justify-center md:justify-end md:w-1/2" data-aos="zoom-in-up">
           <img
         src={eu}
         alt="Minha foto"

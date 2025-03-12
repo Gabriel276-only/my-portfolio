@@ -20,11 +20,11 @@ const Interests = () => {
   ];
 
   return (
-    <section className="relative  flex flex-col items-center justify-center text-white p-8  bg-neutral-950 overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center text-white p-8  bg-neutral-950 overflow-hidden">
       <h2 className="text-xl md:text-2xl font-bold uppercase mb-6 text-center " data-aos="fade-down"> 
         I'm always interested about | Sempre interessado em
       </h2>
-      <div className="flex flex-wrap justify-center gap-3 max-w-3xl">
+      <div className="grid text-center items-center grid-cols-2 w-full md:flex-wrap md:flex justify-center gap-3 max-w-4xl" data-aos="fade-up">
         {interests.map((interest, index) => (
           <span key={index} className="px-4 py-2 border-2 border-white text-sm md:text-lg rounded-full bg-opacity-20 hover:bg-white hover:text-black transition"
             data-aos="zoom-in" data-aos-delay={index * 100}
