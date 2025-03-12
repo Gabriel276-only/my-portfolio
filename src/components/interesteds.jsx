@@ -35,7 +35,7 @@ const Interests = () => {
       </div>
       
       <div className="mt-12 text-center" data-aos="fade-up">
-        <p className="text-lg">Are you minding a project? | Está pensando em um Projeto</p>
+        <p className="text-lg">Are you planning a project? | Está pensando em um Projeto</p>
         <button className="mt-4 px-6 py-3 border-2 border-white text-lg rounded-full hover:bg-white hover:text-black transition">
           Contact Me 
            ▼ 

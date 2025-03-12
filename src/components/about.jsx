@@ -79,9 +79,13 @@ const AboutMe = () => {
       <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold text-gray-300 mb-4" data-aos="fade-right">
       {t.headings.portfolio_intro}
       </h1>
-      <span className="text-2xl md:text-3xl lg:text-4xl text-purple-400 font-extrabold block" data-aos="fade-left">
-        {t.headings.about_me} 
-      </span>
+          <span
+          className="text-2xl md:text-3xl lg:text-4xl text-purple-400 font-extrabold block typing-animation "
+          data-aos="fade-left"
+        >
+          {t.headings.about_me}
+
+        </span>
       <div data-aos="zoom-in">
         <h1 className="text-2xl md:text-6xl lg:text-4xl font-bold text-gray-300 mb-2 mt-4 px-4">
          {t.headings.hello} <span className="text-purple-400">Gabriel Borges</span>
@@ -101,7 +105,7 @@ const AboutMe = () => {
   </div>
 
   {/* Imagem "eu" destacada à direita */}
-    <div  className="relative m-2 md:absolute md:right-10 lg:right-20 bottom-10 md:bottom-0 flex  justify-center md:justify-end md:w-1/2" data-aos="zoom-in-up">
+    <div  className="relative m-2 md:absolute md:right-10 lg:right-20  md:bottom-10 flex justify-center md:justify-end md:w-1/2" data-aos="zoom-in-up">
           <img
         src={eu}
         alt="Minha foto"
@@ -121,19 +125,19 @@ const AboutMe = () => {
         </h2>
 
         {/* Cards de Habilidades */}
-        <div className="relative grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-6xl">
-          {Object.entries(t.content.skills).map(([key, skill], index) => (
-            <div
-              key={key}
-              className="p-6 bg-purple-900 rounded-lg border-2 border-purple-500 hover:border-purple-400 transition-all hover:shadow-[0_0_20px_5px_rgba(128,0,128,0.6)]"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <h3 className="text-2xl font-bold text-purple-400 mb-4">{skill.title}</h3>
-              <p className="text-gray-300">{skill.description}</p>
-            </div>
-          ))}
-        </div>
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+            {Object.entries(t.content.skills).map(([key, skill], index) => (
+              <div
+                key={key}
+                className="p-6 bg-purple-900/70 rounded-lg border-b-2 border-l-4 border-purple-500 hover:border-purple-400 transition-all transform  hover:shadow-lg hover:shadow-purple-500/50 ease-in-out duration-600"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <h3 className="text-2xl font-semibold text-purple-300 mb-4">{skill.title}</h3>
+                <p className="text-gray-200 text-base leading-relaxed">{skill.description}</p>
+              </div>
+            ))}
+          </div>
 
         {/* Componente de Ícones */}
         <div className="flex flex-col justify-center items-center m-10" data-aos="fade-up">
