@@ -10,6 +10,7 @@ import Interests from "./interesteds";
 
 
 
+
 const AboutMe = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -45,6 +46,8 @@ const AboutMe = () => {
   }, []);
 
 
+  
+
 
   
   return (
@@ -76,7 +79,7 @@ const AboutMe = () => {
 
   
     <div className="max-w-6xl mt-60 px-4 text-left md:ml-8 lg:ml-16">
-      <h1 className="text-5xl  md:text-7xl lg:text-9xl font-bold text-gray-400 mb-6" data-aos="fade-right">
+      <h1 className="text-5xl  md:text-7xl lg:text-9xl font-bold text-violet-300 mb-6" data-aos="fade-right">
       {t.headings.portfolio_intro}
       </h1>
           <span
@@ -87,10 +90,10 @@ const AboutMe = () => {
 
         </span>
       <div data-aos="zoom-in">
-        <h1 className="text-2xl md:text-6xl lg:text-4xl font-bold text-gray-400 mb-2 mt-2 px-4">
+        <h1 className="text-2xl md:text-6xl lg:text-4xl font-bold text-violet-300 mb-2 mt-2 px-4">
          {t.headings.hello} <span className="text-fuchsia-400">Gabriel Borges</span>
         </h1>
-        <p className="text-sm max-w-sm md:text-base lg:text-xl text-gray-400 leading-relaxed lg:max-w-3xl mb-2 md:mb-4 lg:mb-6">
+        <p className="text-sm max-w-sm md:text-base lg:text-xl text-violet-300 leading-relaxed lg:max-w-3xl mb-2 md:mb-4 lg:mb-6">
         {t.content.introduction}
         </p>
       </div>
@@ -116,28 +119,28 @@ const AboutMe = () => {
 
 
         {/* Seção de Experiência e Habilidades */}
-      <section
-        ref={nextSectionRef}
-        className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-tl from-purple-900 to-black text-white p-8 relative overflow-hidden"
-      >
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-purple-400" data-aos="fade-down">
-        {t.headings.experience_skills}
-        </h2>
+        <section
+  ref={nextSectionRef}
+  className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-tl from-purple-900 to-black text-white p-8 relative overflow-hidden"
+>
+  <h2 className="text-4xl md:text-5xl font-bold mb-8 text-purple-400" data-aos="fade-down">
+    {t.headings.experience_skills}
+  </h2>
 
-        {/* Cards de Habilidades */}
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full max-w-6xl">
-            {Object.entries(t.content.skills).map(([key, skill], index) => (
-              <div
-                key={key}
-                className="p-6 bg-purple-600/70 rounded-4xl border-b-2 border-l-4 border-purple-500 hover:border-purple-400 transition-all transform  hover:shadow-lg hover:shadow-purple-500/50 ease-in-out duration-600"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <h3 className="text-2xl font-semibold text-purple-300 mb-4 ">{skill.title}</h3>
-                <p className="text-gray-200 text-base leading-relaxed">{skill.description}</p>
-              </div>
-            ))}
-          </div>
+  {/* Cards de Habilidades */}
+  <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+    {Object.entries(t.content.skills).map(([key, skill], index) => (
+      <div
+        key={key}
+        className="p-6 bg-purple-800/20 backdrop-blur-sm rounded-lg border-b-4 border-l-2 border-purple-400 hover:border-purple-400/40 transition-all transform  hover:shadow-lg hover:shadow-purple-500/20 ease-in-out duration-300"
+        data-aos="fade-up"
+        data-aos-delay={index * 100}
+      >
+        <h3 className="text-2xl font-semibold text-purple-300 mb-4">{skill.title}</h3>
+        <p className="text-gray-200 text-base leading-relaxed">{skill.description}</p>
+      </div>
+    ))}
+  </div>
 
         {/* Componente de Ícones */}
         <div className="flex flex-col justify-center items-center m-10" data-aos="fade-up">
