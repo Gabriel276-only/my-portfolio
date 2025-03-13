@@ -53,14 +53,14 @@ const AboutMe = () => {
         {/* Botões de idioma */}
         <div className="absolute top-0 right-0 m-4 md:m-8 lg:m-16 z-10" data-aos="fade-down">
           <button
-            className={`p-3 rounded-lg ${language === "pt" ? "bg-fuchsia-400 text-white" : "bg-fuchsia-300 text-purple-950"}`}
+            className={`p-3 rounded-lg ${language === "pt" ? "bg-violet-500 text-white" : "bg-fuchsia-300 text-purple-950"}`}
             onClick={() => setLanguage("pt")}
           >
             {t.buttons.portuguese}
           </button>
           <span className="text-purple-400"> | </span>
           <button
-            className={`p-3 rounded-lg ${language === "en" ? "bg-fuchsia-400 text-white" : "bg-fuchsia-300 text-purple-950"}`}
+            className={`p-3 rounded-lg ${language === "en" ? "bg-violet-500 text-white" : "bg-fuchsia-300 text-purple-950"}`}
             onClick={() => setLanguage("en")}
           >
             {t.buttons.english}
@@ -76,19 +76,19 @@ const AboutMe = () => {
 
   
     <div className="max-w-6xl mt-60 px-4 text-left md:ml-8 lg:ml-16">
-      <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold text-gray-300 mb-4" data-aos="fade-right">
+      <h1 className="text-5xl  md:text-7xl lg:text-9xl font-bold text-gray-400 mb-6" data-aos="fade-right">
       {t.headings.portfolio_intro}
       </h1>
           <span
-          className="text-2xl md:text-3xl lg:text-4xl text-purple-400 font-extrabold block typing-animation "
+          className="text-lg md:text-2xl lg:text-3xl text-fuchsia-400 font-extrabold block typing-animation "
           data-aos="fade-left"
         >
           {t.headings.about_me}
 
         </span>
       <div data-aos="zoom-in">
-        <h1 className="text-2xl md:text-6xl lg:text-4xl font-bold text-gray-300 mb-2 mt-4 px-4">
-         {t.headings.hello} <span className="text-purple-400">Gabriel Borges</span>
+        <h1 className="text-2xl md:text-6xl lg:text-4xl font-bold text-gray-400 mb-2 mt-2 px-4">
+         {t.headings.hello} <span className="text-fuchsia-400">Gabriel Borges</span>
         </h1>
         <p className="text-sm max-w-sm md:text-base lg:text-xl text-gray-400 leading-relaxed lg:max-w-3xl mb-2 md:mb-4 lg:mb-6">
         {t.content.introduction}
@@ -129,11 +129,11 @@ const AboutMe = () => {
             {Object.entries(t.content.skills).map(([key, skill], index) => (
               <div
                 key={key}
-                className="p-6 bg-purple-900/70 rounded-lg border-b-2 border-l-4 border-purple-500 hover:border-purple-400 transition-all transform  hover:shadow-lg hover:shadow-purple-500/50 ease-in-out duration-600"
+                className="p-6 bg-purple-600/70 rounded-4xl border-b-2 border-l-4 border-purple-500 hover:border-purple-400 transition-all transform  hover:shadow-lg hover:shadow-purple-500/50 ease-in-out duration-600"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <h3 className="text-2xl font-semibold text-purple-300 mb-4">{skill.title}</h3>
+                <h3 className="text-2xl font-semibold text-purple-300 mb-4 ">{skill.title}</h3>
                 <p className="text-gray-200 text-base leading-relaxed">{skill.description}</p>
               </div>
             ))}
