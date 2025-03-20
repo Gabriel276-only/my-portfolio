@@ -4,18 +4,6 @@ import Projects from "./Projects";
 import Interests from "./interesteds";
 import Img from "../assets/img.jpg";
 
-const TimelineBlock = ({ title, desc, isRight }) => (
-  <div className={`relative flex items-center mb-10 ${isRight ? 'flex-row-reverse text-right' : 'text-left'}`} data-aos="fade-up">
-    <div className="flex-1 border-l-2 border-gray-600 h-full ml-6 relative">
-      <div className="absolute w-4 h-4 bg-violet-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
-    </div>
-    <div className="ml-8 p-6 bg-gray-900/80 border border-gray-700 rounded-lg shadow-lg w-full max-w-md transition-all duration-300 hover:scale-105">
-      <h3 className="text-xl font-semibold text-white">{title}</h3>
-      <p className="text-gray-400 text-sm leading-relaxed">{desc}</p>
-    </div>
-  </div>
-);
-
 const ScrollButton = ({ onClick }) => (
   <button
     aria-label="Scroll down to the next section"
@@ -48,7 +36,7 @@ export default function ExperienceSection() {
 
   const handleScroll = (sectionRef) => {
     if (sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   };
 
