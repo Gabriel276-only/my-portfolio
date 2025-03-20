@@ -65,7 +65,7 @@ export default function ExperienceSection() {
       <div className="absolute inset-0 bg-black/60 backdrop-blur-xl" />
 
       <div className="relative flex flex-col justify-center items-center min-h-screen z-10 text-center px-4 sm:px-6 max-w-6xl">
-        <h1 className="text-4xl sm:text-6xl md:text-8xl font-extrabold uppercase tracking-wider text-white drop-shadow-lg">
+        <h1 className="text-4xl pt-10 sm:text-6xl md:text-8xl font-extrabold uppercase tracking-wider text-white drop-shadow-lg">
           Minha Trajetória
         </h1>
         <p className="text-lg sm:text-2xl text-violet-400 mt-2 mb-10">
