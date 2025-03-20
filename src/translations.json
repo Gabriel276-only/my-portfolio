@@ -1,7 +1,7 @@
 {
   "en": {
     "buttons": {
-      "portuguese": "Portuguese",
+      "portuguese": "Português",
       "english": "English",
       "learn_more": "Learn More"
     },
@@ -31,7 +31,7 @@
   "pt": {
     "buttons": {
       "portuguese": "Português",
-      "english": "Inglês",
+      "english": "English",
       "learn_more": "Saiba Mais"
     },
     "headings": {
