@@ -15,7 +15,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="relative min-h-screen w-full flex flex-col md:flex-row items-center bg-gradient-to-bl from-purple-900 to-black p-8 gap-6 overflow-hidden">
+    <section className="relative min-h-screen w-full flex flex-col md:flex-row items-center p-8 gap-6 overflow-hidden">
       {/* Elementos decorativos nos cantos */}
       <motion.img
         src={Ellipse2}

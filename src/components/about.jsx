@@ -4,9 +4,8 @@ import 'aos/dist/aos.css';
 import TechIcons from "./Icons";
 import Elipse from "../assets/Ellipse 1.png";
 import eu from "../assets/Union.png";
-import Projects from "./Projects";
-import Translations from "../translations.json";
-import Interests from "./interesteds";
+  import Translations from "../translations.json";
+import ExperienceSection from "./skills";
 
 
 
@@ -18,6 +17,8 @@ const AboutMe = () => {
 
   const nextSectionRef = useRef(null);
   const nextSectionRef2 = useRef(null);
+
+
 
   const [language, setLanguage] = useState("en"); // Estado do idioma
   const t = Translations[language]; // Seleciona o idioma correto
@@ -79,7 +80,7 @@ const AboutMe = () => {
 
   
     <div className="max-w-6xl mt-60 px-4 text-left md:ml-8 lg:ml-16">
-      <h1 className="text-5xl  md:text-7xl lg:text-9xl font-bold text-violet-300 mb-6" data-aos="fade-right">
+      <h1 className="text-5xl  md:text-7xl lg:text-9xl font-bold text-violet-300 mb-6 tracking-tight" data-aos="fade-right">
       {t.headings.portfolio_intro}
       </h1>
           <span
@@ -121,7 +122,7 @@ const AboutMe = () => {
         {/* Seção de Experiência e Habilidades */}
         <section
   ref={nextSectionRef}
-  className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-tl from-purple-900 to-black text-white p-8 relative overflow-hidden"
+  className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-black via-violet-900 to-purple-500 text-white px-8 py-16 relative overflow-hidden"
 >
   <h2 className="text-4xl md:text-5xl font-bold mb-8 text-purple-400" data-aos="fade-down">
     {t.headings.experience_skills}
@@ -132,7 +133,7 @@ const AboutMe = () => {
     {Object.entries(t.content.skills).map(([key, skill], index) => (
       <div
         key={key}
-        className="p-6 bg-purple-800/20 backdrop-blur-sm rounded-lg border-b-4 border-l-2 border-purple-400 hover:border-purple-400/40 transition-all transform  hover:shadow-lg hover:shadow-purple-500/20 ease-in-out duration-300"
+        className="p-6 bg-purple-800/30 backdrop-blur-sm rounded-lg border-b-4 border-l-2 border-fuchsia-400 hover:border-fuchsia-400/40 transition-all transform  hover:shadow-lg hover:shadow-purple-500/20 ease-in-out duration-300"
         data-aos="fade-up"
         data-aos-delay={index * 100}
       >
@@ -145,30 +146,26 @@ const AboutMe = () => {
         {/* Componente de Ícones */}
         <div className="flex flex-col justify-center items-center m-10" data-aos="fade-up">
           <TechIcons />
-        </div>
-
+          </div>
         {/* Botão de Scroll */}
         <button
-          className="m-10 rounded-full flex items-center justify-center bg-violet-400 w-10 h-10 bottom-20 shadow-[0_0_15px_5px_rgba(128,0,128,0.5)] transition-all duration-300 cursor-pointer hover:scale-110 animate-bounce"
-          onClick={() => handleScroll(nextSectionRef2)}
-        >
-          ▼
-        </button>
+    className="relative mt-10 flex items-center justify-center w-12 h-12 border border-black rounded-full transition-all duration-300 bg-black/60 hover:bg-violet-700"
+    onClick={() => handleScroll(nextSectionRef2)}
+  >
+    <span className="text-purple-200 text-2xl animate-bounce">↓</span>
+  </button>
+</section>
+   
+
+      <section className="bg-black shadow-inner"
+      ref={nextSectionRef2}>
+        <ExperienceSection/>
       </section>
-      <div
-  className="min-h-screen flex flex-col items-center bg-gradient-to-tr from-purple-900 to-black relative overflow-hidden"
-  ref={nextSectionRef2}
->
-  {/* Elipse 3 no canto superior direito */}
 
-  {/* Seção de Projetos */}
-  <div className="w-full">
-    
-    <Projects />
-  <Interests />
-</div>
-</div>
+  
 
+
+ 
   
     </>
   );
