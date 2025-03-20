@@ -23,7 +23,7 @@ export default function ExperienceSection() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     const currentRef = sectionRef.current;
