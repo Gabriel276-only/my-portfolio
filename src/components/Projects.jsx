@@ -9,7 +9,7 @@ import Projeto3 from "../assets/Projects/projeto-3.png";
 
 const projects = [
   { id: 1, title: "ConsultAR - Página Informativa da Clínica de Psicologia, Saúde e Bem-Estar", link: "https://github.com/Gabriel276-only/ConsultAR-React", image: Projeto1 },
-  { id: 2, title: "functions-and-derived - Visualizador de Funções e Derivadas", link: "https://github.com/Gabriel276-only/functions-and-derived", image: Projeto2 },
+  { id: 2, title: "functions-and-derivatives - Visualizador de Funções e Derivadas", link: "https://github.com/Gabriel276-only/functions-and-derived", image: Projeto2 },
   { id: 3, title: "Forms-React: Sistema de Login, Verificação e Hospedagem de Quartos", link: "https://github.com/seuusuario/project3", image: Projeto3 },
 ];
 
