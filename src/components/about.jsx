@@ -1,11 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react"; // React is used in JSX
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import TechIcons from "./Icons";
-import Elipse from "../assets/Ellipse 1.png";
-import eu from "../assets/Union.png";
-  import Translations from "../translations.json";
-import ExperienceSection from "./skills";
+import TechIcons from "./Icons"; // Used in the JSX
+import Elipse from "../assets/Ellipse 1.png"; // Used in the JSX
+import eu from "../assets/Union.png"; // Used in the JSX
+import Translations from "../translations.json";
+import Img from "../assets/img.jpg";
+
+
+import Projects from "./Projects"; // Used in the JSX
+import Interests from "./interesteds"; // Used in the JSX
+import { ChevronDown } from "lucide-react";
 
 
 
@@ -15,15 +20,15 @@ const AboutMe = () => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  const nextSectionRef = useRef(null);
-  const nextSectionRef2 = useRef(null);
+  const nextSectionRef = useRef(null); // Used for scrolling
+  const nextSectionRef2 = useRef(null); // Used for scrolling
 
 
 
-  const [language, setLanguage] = useState("en"); // Estado do idioma
-  const t = Translations[language]; // Seleciona o idioma correto
+  const [language, setLanguage] = useState("en"); // Used for language selection
+  const t = Translations[language]; // Used for translations
 
-  const handleScroll = (sectionRef) => {
+  const handleScroll = (sectionRef) => { // Used for smooth scrolling
     sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -47,11 +52,25 @@ const AboutMe = () => {
   }, []);
 
 
-  
+  const [isVisible, setIsVisible] = useState(false); // Used for visibility detection
+  const sectionRef = useRef(null);
+  const nextSectionRef3 = useRef(null); // Used for scrolling
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
 
-  
-  return (
+    const currentRef = sectionRef.current;
+    if (currentRef) observer.observe(currentRef);
+
+    return () => {
+      if (currentRef) observer.unobserve(currentRef);
+    };
+}, []);
+
+return (
     <>
      <section className="min-h-screen flex flex-col md:grid md:grid-cols-2 items-center bg-gradient-to-bl from-purple-900 to-black p-8 relative overflow-hidden">
         {/* Botões de idioma */}
@@ -122,7 +141,7 @@ const AboutMe = () => {
         {/* Seção de Experiência e Habilidades */}
         <section
   ref={nextSectionRef}
-  className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-black via-violet-900 to-purple-500 text-white px-8 py-16 relative overflow-hidden"
+  className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-black via-violet-800 to-purple-950 text-white px-8 py-16 relative overflow-hidden"
 >
   <h2 className="text-4xl md:text-5xl font-bold mb-8 text-purple-400" data-aos="fade-down">
     {t.headings.experience_skills}
@@ -159,16 +178,63 @@ const AboutMe = () => {
 
       <section className="bg-black shadow-inner"
       ref={nextSectionRef2}>
-        <ExperienceSection/>
+        <div
+              ref={sectionRef}
+      id="experienceSection"
+      className={`relative min-h-screen flex flex-col justify-center items-center text-center transition-all duration-1000 overflow-hidden bg-black ${isVisible ? "opacity-100" : "opacity-0"}`}
+    >
+      <div className="absolute inset-0 overflow-hidden">
+  <img
+    src={Img}
+    alt="Background image of a developer workspace"
+    className="w-full h-full object-cover brightness-65 transform translate-z-0"
+  />
+</div>
+
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-xl" />
+
+      <div className="relative flex flex-col justify-center items-center min-h-screen z-10 text-center px-4 sm:px-6 max-w-6xl">
+        <h1 className="text-4xl pt-10 sm:text-6xl md:text-8xl font-extrabold uppercase tracking-wider text-white drop-shadow-lg">
+          {t.journey.title}
+          </h1>
+        <p className="text-lg sm:text-2xl text-violet-400 mt-2 mb-10">
+        {t.journey.description}
+        </p>
+
+        <div className="flex flex-col md:flex-row justify-center w-full mt-4 text-left text-white gap-4 sm:gap-6">
+          <div className="w-full md:w-1/2 p-4">
+            <h3 className="text-2xl font-semibold mb-4">
+            {t.journey.paragraph}
+            </h3>
+            <p className="text-lg leading-relaxed mb-4 sm:text-justify tracking-tight">
+                      {t.journey.content_journey}
+            </p>
+          </div>
+        </div>
+
+        <div className="flex justify-center mt-4">
+        <button
+              className="px-10 py-3 bg-black border-2 border-white text-white rounded-full flex items-center gap-2 
+                         transition-all hover:bg-purple-700 hover:border-purple-500 hover:shadow-lg hover:scale-110 
+                         active:border-6 active:bg-purple-900"
+              onClick={() => handleScroll(nextSectionRef3)}
+            >
+            {t.journey.next} 
+            <ChevronDown className="animate-bounce">
+            </ChevronDown>
+          </button>
+        </div>
+      </div>
+
+      <div className="w-full" ref={nextSectionRef3}>
+        <Projects />
+        <Interests />
+      </div>
+      </div>
       </section>
 
-  
-
-
- 
-  
     </>
   );
 };
 
-export default AboutMe;
+export default AboutMe

@@ -26,8 +26,16 @@
           "description": "Aiming to transition into software development, with a focus on building scalable and efficient applications. Familiar with Python, Java, and backend technologies."
         }
       }
-    }
-  },
+    },
+      "journey": {
+        "title": "My Journey",
+        "description": "A journey of discoveries, challenges, and achievements in the world of technology.",
+        "paragraph": "Since I was 10 years old, striving to stand out, I found a passion in programming.",
+"content_journey": "When I started learning programming on my own at the age of 10, I knew it could take me to great places. Despite the challenges of accessing paid content, my motivation only grew. At 14, I discovered IFRJ in Eng. Paulo de Frontin, focused on Internet Technology, and a new door opened for me. There, I became involved in various academic activities, such as lectures, scientific research projects, article publications, and I was also a monitor for computer classes for underprivileged communities and the elderly. Now, as a graduate, I am still developing new skills and learning programming languages, always seeking more knowledge. Through growing networking and a change in my lifestyle, I’m becoming not only a better professional but also a more grounded and adaptable person, opening doors for a promising future as a developer.",
+        "next": "Next Section"
+      }
+    },
+
   "pt": {
     "buttons": {
       "portuguese": "Português",
@@ -35,9 +43,9 @@
       "learn_more": "Saiba Mais"
     },
     "headings": {
-      "portfolio_intro": "Este é meu portfolio",
+      "portfolio_intro": "Este é meu portfólio",
       "about_me": "Sobre Mim",
-      "hello": "Olá, eu sou "
+      "hello": "Olá, eu sou"
     },
     "content": {
       "introduction": "Sou um Desenvolvedor e Designer morando no Brasil, apaixonado por criar experiências digitais modernas, funcionais e visualmente impressionantes. Especializo-me na construção de interfaces interativas e estou sempre aprimorando minhas habilidades em design UI/UX e desenvolvimento. Adoro explorar novas tecnologias e transformar ideias em realidade através do código e do design.",
@@ -55,6 +63,14 @@
           "description": "Com o objetivo de fazer a transição para o desenvolvimento de software, com foco na construção de aplicativos escaláveis e eficientes. Familiarizado com Python, Java e tecnologias de backend."
         }
       }
+    },
+      "journey": {
+        "title": "Minha Trajetória",
+        "description": "Uma jornada de descobertas, desafios e conquistas no mundo da tecnologia.",
+        "paragraph": "Desde os 10 anos, buscando diferenciar-me, encontrei na programação uma paixão.",
+  "content_journey": "Quando comecei a aprender programação de forma autodidata, aos 10 anos, sabia que isso poderia me levar a grandes lugares. Mesmo com as dificuldades de acessar conteúdos pagos, minha motivação só aumentou. Aos 14 anos, conheci o IFRJ de Eng. Paulo de Frontin, voltado para Tecnologia para Internet, e uma nova porta se abriu. Lá, me envolvi em várias atividades acadêmicas, como palestras, projetos de iniciação científica, publicação de artigos, e também fui monitor de aulas de informática para comunidades carentes e idosos. Hoje, formado, continuo desenvolvendo novas habilidades e aprendendo linguagens de programação, sempre em busca de mais conhecimento. Através de um networking crescente e com a mudança de hábitos de vida, estou me tornando não só um profissional melhor, mas também uma pessoa mais centrada e adaptável, abrindo portas para um futuro promissor como desenvolvedor.",
+        "next": "Próxima Seção"
+      }
     }
   }
-}
+
