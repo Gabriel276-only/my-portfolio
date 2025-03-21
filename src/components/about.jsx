@@ -141,7 +141,7 @@ return (
         {/* Seção de Experiência e Habilidades */}
         <section
   ref={nextSectionRef}
-  className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-black via-violet-800 to-purple-950 text-white px-8 py-16 relative overflow-hidden"
+  className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-black  to-purple-900 text-white px-8 py-16 relative overflow-hidden"
 >
   <h2 className="text-4xl md:text-5xl font-bold mb-8 text-purple-400" data-aos="fade-down">
     {t.headings.experience_skills}
@@ -206,7 +206,7 @@ return (
             <h3 className="text-2xl font-semibold mb-4">
             {t.journey.paragraph}
             </h3>
-            <p className="text-lg leading-relaxed mb-4 sm:text-justify tracking-tight">
+            <p className="md:text-lg leading-relaxed mb-4 text-justify tracking-tight">
                       {t.journey.content_journey}
             </p>
           </div>
