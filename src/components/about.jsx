@@ -149,18 +149,25 @@ return (
 
   {/* Cards de Habilidades */}
   <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full max-w-6xl">
-    {Object.entries(t.content.skills).map(([key, skill], index) => (
-      <div
-        key={key}
-        className="p-6 bg-purple-800/30 backdrop-blur-sm rounded-lg border-b-4 border-l-2 border-fuchsia-400 hover:border-fuchsia-400/40 transition-all transform  hover:shadow-lg hover:shadow-purple-500/20 ease-in-out duration-300"
-        data-aos="fade-up"
-        data-aos-delay={index * 100}
-      >
-        <h3 className="text-2xl font-semibold text-purple-300 mb-4">{skill.title}</h3>
-        <p className="text-gray-200 text-base leading-relaxed">{skill.description}</p>
-      </div>
-    ))}
-  </div>
+  {Object.entries(t.content.skills).map(([key, skill], index) => (
+    <div
+      key={key}
+      className="group relative p-6 bg-gradient-to-br from-purple-900 to-fuchsia-800/20 backdrop-blur-lg rounded-xl border-b-4 border-l-2 border-fuchsia-500/70 duration-500 ease-out shadow-lg hover:shadow-fuchsia-500/50 hover:border-fuchsia-300 transform hover:-translate-y-1"
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
+    >
+      {/* Efeito sutil de brilho ao redor no hover */}
+      <div className="absolute inset-0 bg-fuchsia-500 opacity-0 group-hover:opacity-20 blur-3xl transition-all duration-700"></div>
+      
+      <h3 className="text-2xl font-bold text-fuchsia-300 drop-shadow-md mb-4 transition-all duration-500 ease-out group-hover:text-white">
+        {skill.title}
+      </h3>
+      <p className="text-gray-300 text-base leading-relaxed transition-all duration-500 ease-out group-hover:text-gray-100">
+        {skill.description}
+      </p>
+    </div>
+  ))}
+</div>
 
         {/* Componente de Ícones */}
         <div className="flex flex-col justify-center items-center m-10" data-aos="fade-up">
@@ -194,10 +201,10 @@ return (
       <div className="absolute inset-0 bg-black/60 backdrop-blur-xl" />
 
       <div className="relative flex flex-col justify-center items-center min-h-screen z-10 text-center px-4 sm:px-6 max-w-6xl">
-        <h1 className="text-4xl pt-10 sm:text-6xl md:text-8xl font-extrabold uppercase tracking-wider text-white drop-shadow-lg">
+        <h1 className="text-4xl pt-10 sm:text-6xl md:text-8xl font-black  uppercase tracking-wider text-white drop-shadow-lg">
           {t.journey.title}
           </h1>
-        <p className="text-lg sm:text-2xl text-violet-400 mt-2 mb-10">
+        <p className="text-lg sm:text-2xl font-medium text-violet-400 mt-2 mb-10">
         {t.journey.description}
         </p>
 
