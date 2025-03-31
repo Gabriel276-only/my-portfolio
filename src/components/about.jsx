@@ -72,18 +72,18 @@ const AboutMe = () => {
 
 return (
     <>
-     <section className="min-h-screen flex flex-col md:grid md:grid-cols-2 items-center bg-gradient-to-bl from-purple-900 to-black p-8 relative overflow-hidden">
+     <section className="min-h-screen flex flex-col md:grid md:grid-cols-2 items-center  bg-gradient-to-tr from-black to-purple-900 p-8 relative overflow-hidden">
         {/* Botões de idioma */}
         <div className="absolute top-0 right-0 m-4 md:m-8 lg:m-16 z-10" data-aos="fade-down">
           <button
-            className={`p-3 rounded-lg ${language === "pt" ? "bg-violet-500 text-white" : "bg-fuchsia-300 text-purple-950"}`}
+            className={`p-3 rounded-lg ${language === "pt" ? "bg-violet-600  text-white" : "border-1 text-white hover:bg-black"}`}
             onClick={() => setLanguage("pt")}
           >
             {t.buttons.portuguese}
           </button>
           <span className="text-purple-400"> | </span>
           <button
-            className={`p-3 rounded-lg ${language === "en" ? "bg-violet-500 text-white" : "bg-fuchsia-300 text-purple-950"}`}
+            className={`p-3 rounded-lg ${language === "en" ? "bg-violet-600  text-white" : "border-1 text-white hover:bg-black "}`}
             onClick={() => setLanguage("en")}
           >
             {t.buttons.english}
@@ -132,7 +132,7 @@ return (
           <img
         src={eu}
         alt="Minha foto"
-        className="w-32 h-32 md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full transition-transform duration-500 hover:scale-105 bg-purple-500"
+        className="w-32 h-32 md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full transition-transform duration-500 hover:scale-105 bg-fuchsia-400"
       />
     </div>
   </section>
@@ -182,63 +182,69 @@ return (
   </button>
 </section>
    
+<section 
+  ref={nextSectionRef2}
+  className="relative min-h-screen bg-gray-950 overflow-hidden"
+>
+  {/* Background com overlay mais sutil */}
+  <div className="absolute inset-0">
+    <img
+      src={Img}
+      alt="Developer workspace"
+      className="w-full h-full object-cover object-center opacity-20"
+    />
+    <div className="absolute inset-0 bg-gradient-to-r from-purple-950/90 via-gray-950/90 to-white/10" />
+  </div>
 
-      <section className="bg-black shadow-inner"
-      ref={nextSectionRef2}>
-        <div
-              ref={sectionRef}
-      id="experienceSection"
-      className={`relative min-h-screen flex flex-col justify-center items-center text-center transition-all duration-1000 overflow-hidden bg-black ${isVisible ? "opacity-100" : "opacity-0"}`}
-    >
-      <div className="absolute inset-0 overflow-hidden">
-  <img
-    src={Img}
-    alt="Background image of a developer workspace"
-    className="w-full h-full object-cover brightness-65 transform translate-z-0"
-  />
-</div>
-
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-xl" />
-
-      <div className="relative flex flex-col justify-center items-center min-h-screen z-10 text-center px-4 sm:px-6 max-w-6xl">
-        <h1 className="text-4xl pt-10 sm:text-6xl md:text-8xl font-black  uppercase tracking-wider text-white drop-shadow-lg">
+  {/* Conteúdo principal */}
+  <div 
+    ref={sectionRef}
+    className={`relative min-h-screen flex flex-col justify-center items-center px-6 py-20 transition-opacity duration-700 ease-in-out ${isVisible ? "opacity-100" : "opacity-0"}`}
+  >
+    <div className="max-w-4xl mx-auto text-center">
+      {/* Título com efeito sutil */}
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-300">
           {t.journey.title}
-          </h1>
-        <p className="text-lg sm:text-2xl font-medium text-violet-400 mt-2 mb-10">
+        </span>
+      </h1>
+      
+      {/* Subtítulo */}
+      <p className="text-lg md:text-xl text-purple-200 mb-12 max-w-2xl mx-auto">
         {t.journey.description}
+      </p>
+
+      {/* Conteúdo do texto */}
+      <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 md:p-8 text-left">
+        <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">
+          {t.journey.paragraph}
+        </h3>
+        <p className="text-gray-300 leading-relaxed md:text-lg">
+          {t.journey.content_journey}
         </p>
+      </div>
 
-        <div className="flex flex-col md:flex-row justify-center w-full mt-4 text-left text-white gap-4 sm:gap-6">
-          <div className="w-full md:w-1/2 p-4">
-            <h3 className="text-2xl font-semibold mb-4">
-            {t.journey.paragraph}
-            </h3>
-            <p className="md:text-lg leading-relaxed mb-4 text-justify tracking-tight">
-                      {t.journey.content_journey}
-            </p>
-          </div>
-        </div>
-
-        <div className="flex justify-center mt-4">
+      {/* Botão com transição suave */}
+      <div className="mt-12">
         <button
-              className="px-10 py-3 bg-black border-2 border-white text-white rounded-full flex items-center gap-2 
-                         transition-all hover:bg-purple-700 hover:border-purple-500 hover:shadow-lg hover:scale-110 
-                         active:border-6 active:bg-purple-900"
-              onClick={() => handleScroll(nextSectionRef3)}
-            >
-            {t.journey.next} 
-            <ChevronDown className="animate-bounce">
-            </ChevronDown>
-          </button>
-        </div>
+          onClick={() => handleScroll(nextSectionRef3)}
+          className="group relative inline-flex items-center px-6 py-3 overflow-hidden rounded-full bg-black border border-white hover:bg-purple-500 hover:border-purple-500 transition-all duration-300"
+        >
+          <span className="text-white font-medium mr-2">
+            {t.journey.next}
+          </span>
+          <ChevronDown className="w-5 h-5 text-white group-hover:translate-y-1 transition-transform duration-300" />
+        </button>
       </div>
+    </div>
+  </div>
 
-      <div className="w-full" ref={nextSectionRef3}>
-        <Projects />
-        <Interests />
-      </div>
-      </div>
-      </section>
+  {/* Seções seguintes */}
+  <div className="w-full" ref={nextSectionRef3}>
+    <Projects />
+    <Interests />
+  </div>
+</section>
 
     </>
   );
