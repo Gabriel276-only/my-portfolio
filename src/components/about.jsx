@@ -6,6 +6,7 @@ import Elipse from "../assets/Ellipse 1.png"; // Used in the JSX
 import eu from "../assets/Union.png"; // Used in the JSX
 import Translations from "../translations.json";
 import Img from "../assets/img.jpg";
+import sculture from "../assets/sculture.png"
 
 
 import Projects from "./Projects"; // Used in the JSX
@@ -143,6 +144,10 @@ return (
   ref={nextSectionRef}
   className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-black  to-purple-900 text-white px-8 py-16 relative overflow-hidden"
 >
+<h1 className="text-7xl font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-purple-600 drop-shadow-lg">
+Facimus arte  
+</h1>
+
   <h2 className="text-4xl md:text-5xl font-bold mb-8 text-purple-400" data-aos="fade-down">
     {t.headings.experience_skills}
   </h2>
@@ -173,6 +178,14 @@ return (
         <div className="flex flex-col justify-center items-center m-10" data-aos="fade-up">
           <TechIcons />
           </div>
+          <img
+        src={sculture}
+        alt="escultura"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 max-w-[34%] opacity-40 h-auto p-3 mix-blend-color-dodge"
+        data-aos="zoom-out-left"
+        data-aos-easing="ease-out-cubic"
+      />
+
         {/* Botão de Scroll */}
         <button
     className="relative mt-10 flex items-center justify-center w-12 h-12 border border-black rounded-full transition-all duration-300 bg-black/60 hover:bg-violet-700"
