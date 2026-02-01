@@ -6,7 +6,7 @@
       "learn_more": "Learn More"
     },
     "headings": {
-      "portfolio_intro": "This is my portfolio",
+      "portfolio_intro": "WEB DEVELOPER, FUTURE SOFTWARE ENGINEER & UI/UX DESIGNER.",
       "about_me": "About Me",
       "hello": "Hello, I'm"
     },
@@ -27,14 +27,14 @@
         }
       }
     },
-      "journey": {
-        "title": "My Journey",
-        "description": "A journey of discoveries, challenges, and achievements in the world of technology.",
-        "paragraph": "Since I was 10 years old, striving to stand out, I found a passion in programming.",
-"content_journey": "When I started learning programming on my own at the age of 10, I knew it could take me to great places. Despite the challenges of accessing paid content, my motivation only grew. At 14, I discovered IFRJ in Eng. Paulo de Frontin, focused on Internet Technology, and a new door opened for me. There, I became involved in various academic activities, such as lectures, scientific research projects, article publications, and I was also a monitor for computer classes for underprivileged communities and the elderly. Now, as a graduate, I am still developing new skills and learning programming languages, always seeking more knowledge. Through growing networking and a change in my lifestyle, I’m becoming not only a better professional but also a more grounded and adaptable person, opening doors for a promising future as a developer.",
-        "next": "Next Section"
-      }
-    },
+ "journey": {
+  "title": "My Journey",
+  "description": "A path shaped by curiosity, dedication, and continuous growth.",
+  "paragraph": "From an early age, technology became more than curiosity — it became purpose.",
+  "content_journey": "My journey into programming began when I was 10 years old, driven by a deep curiosity to understand how things worked behind the screen. With limited access to paid resources, I learned through self-study, experimentation, and persistence. At 14, this passion found direction when I joined IFRJ in Engenheiro Paulo de Frontin, enrolling in the Internet Technology program. There, I expanded my perspective on technology by engaging in academic projects, scientific research, article publications, and social initiatives, including teaching computer classes to underprivileged communities and elderly people. Now, as a graduate, I continue to refine my skills in development and design, strengthen my professional network, and evolve not only technically but also personally. Each step of this journey brings me closer to my goal: building meaningful, well-crafted digital experiences that create real impact.",
+  "next": "Next Section"
+}
+  },
 
   "pt": {
     "buttons": {
@@ -43,12 +43,12 @@
       "learn_more": "Saiba Mais"
     },
     "headings": {
-      "portfolio_intro": "Este é meu portfólio",
+      "portfolio_intro": "DESENVOLVEDOR WEB, FUTURO ENGENHEIRO DE SOFTWARE & DESIGNER UI/UX.",
       "about_me": "Sobre Mim",
       "hello": "Olá, eu sou"
     },
     "content": {
-      "introduction": "Sou um Desenvolvedor e Designer morando no Brasil, apaixonado por criar experiências digitais modernas, funcionais e visualmente impressionantes. Especializo-me na construção de interfaces interativas e estou sempre aprimorando minhas habilidades em design UI/UX e desenvolvimento. Adoro explorar novas tecnologias e transformar ideias em realidade através do código e do design.",
+      "introduction": "Sou um Desenvolvedor e Designer do Brasil, apaixonado por criar experiências digitais modernas, funcionais e visualmente impressionantes. Especializo-me na construção de interfaces interativas e estou sempre aprimorando minhas habilidades em design UI/UX e desenvolvimento. Adoro explorar novas tecnologias e transformar ideias em realidade através do código e do design.",
       "skills": {
         "web_dev": {
           "title": "Desenvolvimento Web",
@@ -65,12 +65,13 @@
       }
     },
       "journey": {
-        "title": "Minha Trajetória",
-        "description": "Uma jornada de descobertas, desafios e conquistas no mundo da tecnologia.",
-        "paragraph": "Desde os 10 anos, buscando diferenciar-me, encontrei na programação uma paixão.",
-  "content_journey": "Quando comecei a aprender programação de forma autodidata, aos 10 anos, sabia que isso poderia me levar a grandes lugares. Mesmo com as dificuldades de acessar conteúdos pagos, minha motivação só aumentou. Aos 14 anos, conheci o IFRJ de Eng. Paulo de Frontin, voltado para Tecnologia para Internet, e uma nova porta se abriu. Lá, me envolvi em várias atividades acadêmicas, como palestras, projetos de iniciação científica, publicação de artigos, e também fui monitor de aulas de informática para comunidades carentes e idosos. Hoje, formado, continuo desenvolvendo novas habilidades e aprendendo linguagens de programação, sempre em busca de mais conhecimento. Através de um networking crescente e com a mudança de hábitos de vida, estou me tornando não só um profissional melhor, mas também uma pessoa mais centrada e adaptável, abrindo portas para um futuro promissor como desenvolvedor.",
-        "next": "Próxima Seção"
+  "title": "Minha Jornada",
+  "description": "Uma trajetória construída por curiosidade, esforço e evolução constante.",
+  "paragraph": "Desde muito cedo, a tecnologia deixou de ser apenas curiosidade e passou a ser propósito.",
+  "content_journey": "Meu primeiro contato com programação aconteceu aos 10 anos, movido pela vontade de entender como as coisas funcionavam por trás da tela. Mesmo sem acesso a cursos pagos ou recursos avançados, aprendi de forma autodidata, explorando, errando e evoluindo a cada tentativa. Aos 14 anos, essa paixão ganhou direção quando ingressei no IFRJ de Engenheiro Paulo de Frontin, no curso de Tecnologia para Internet. Ali, ampliei minha visão sobre o impacto da tecnologia, participando de projetos acadêmicos, pesquisas científicas, publicações de artigos e ações sociais, como aulas de informática para comunidades carentes e idosos. Hoje, formado, sigo em constante evolução, aprofundando meus conhecimentos em desenvolvimento e design, construindo um networking sólido e aprimorando não apenas minhas habilidades técnicas, mas também minha mentalidade profissional. Cada etapa dessa jornada reforça meu objetivo: criar soluções digitais relevantes, humanas e bem construídas.",
+  "next": "Próxima Seção"
+}
+
       }
     }
-  }
 

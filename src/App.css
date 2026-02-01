@@ -5,6 +5,22 @@
     to { width: 12ch; } /* Ajuste de acordo com o conteúdo */
 }
   
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.section {
+  scroll-snap-align: start;
+  height: 100vh;
+}
+
+
 .typing-animation {
     display: inline-block;
     white-space: nowrap;

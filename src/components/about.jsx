@@ -1,266 +1,264 @@
-import React, { useEffect, useRef, useState } from "react"; // React is used in JSX
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import TechIcons from "./Icons"; // Used in the JSX
-import Elipse from "../assets/Ellipse 1.png"; // Used in the JSX
-import eu from "../assets/Union.png"; // Used in the JSX
+import { useEffect, useRef, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import TechIcons from "./Icons";
+import Projects from "./Projects";
+
+import Elipse from "../assets/Ellipse 1.png";
+import eu from "../assets/Union.png";
+import sculture from "../assets/sculture.png";
+
 import Translations from "../translations.json";
-import Img from "../assets/img.jpg";
-import sculture from "../assets/sculture.png"
-
-
-import Projects from "./Projects"; // Used in the JSX
-import Interests from "./interesteds"; // Used in the JSX
 import { ChevronDown } from "lucide-react";
 
-
-
-
 const AboutMe = () => {
+
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
-
-  const nextSectionRef = useRef(null); // Used for scrolling
-  const nextSectionRef2 = useRef(null); // Used for scrolling
-
-
-
-  const [language, setLanguage] = useState("en"); // Used for language selection
-  const t = Translations[language]; // Used for translations
-
-  const handleScroll = (sectionRef) => { // Used for smooth scrolling
-    sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
-  // Função para o efeito parallax
-  const handleParallax = (e) => {
-    const parallaxElipses = document.querySelectorAll('.parallax');
-    parallaxElipses.forEach((elipse) => {
-      const speed = elipse.getAttribute('data-speed');
-      const offset = e.pageYOffset * speed;
-      elipse.style.transform = `translateY(${offset}px)`;
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: "ease-out-cubic",
     });
-  };
-
-
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleParallax);
-    return () => {
-      window.removeEventListener('scroll', handleParallax);
-    };
   }, []);
 
+ 
+  const [language, setLanguage] = useState("en");
+  const t = Translations[language];
 
-  const [isVisible, setIsVisible] = useState(false); // Used for visibility detection
-  const sectionRef = useRef(null);
-  const nextSectionRef3 = useRef(null); // Used for scrolling
+  /* =========================
+     REFS
+  ========================== */
+  const skillsRef = useRef(null);
+  const journeyRef = useRef(null);
+  const projectsRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.1 }
-    );
+  const scrollTo = (ref) => {
+    ref.current?.scrollIntoView({ behavior: "auto", block: "start" });
+  };
 
-    const currentRef = sectionRef.current;
-    if (currentRef) observer.observe(currentRef);
+ 
+  return (
+    <section id="about-me" className=" text-white overflow-hidden">
 
-    return () => {
-      if (currentRef) observer.unobserve(currentRef);
-    };
-}, []);
-
-return (
-    <>
-     <section className="min-h-screen flex flex-col md:grid md:grid-cols-2 items-center  bg-gradient-to-tr from-black to-purple-900 p-8 relative overflow-hidden">
-        {/* Botões de idioma */}
-        <div className="absolute top-0 right-0 m-4 md:m-8 lg:m-16 z-10" data-aos="fade-down">
+      <section className="relative min-h-screen grid md:grid-cols-2 items-center bg-gradient-to-tr from-purple-700 to-purple-950 px-6 py-24">
+        <div className="absolute top-6 right-6 z-20 flex gap-2">
           <button
-            className={`p-3 rounded-lg ${language === "pt" ? "bg-violet-600  text-white" : "border-1 text-white hover:bg-black"}`}
             onClick={() => setLanguage("pt")}
+            className={`px-4 py-2 rounded-md text-sm ${
+              language === "pt"
+                ? "bg-violet-600"
+                : "border border-white/20 hover:bg-white/10"
+            }`}
           >
-            {t.buttons.portuguese}
+            PT
           </button>
-          <span className="text-purple-400"> | </span>
           <button
-            className={`p-3 rounded-lg ${language === "en" ? "bg-violet-600  text-white" : "border-1 text-white hover:bg-black "}`}
             onClick={() => setLanguage("en")}
+            className={`px-4 py-2 rounded-md text-sm ${
+              language === "en"
+                ? "bg-violet-600"
+                : "border border-white/20 hover:bg-white/10"
+            }`}
           >
-            {t.buttons.english}
+            EN
           </button>
         </div>
-  
-  <img
-    src={Elipse}
-    alt="Elemento decorativo roxo"
-    className="absolute top-0 right-0 w-90 h-90 md:w-[800px] md:h-[800px] animate-pulse"
-    data-aos="fade-down"
-  />
 
-  
-    <div className="max-w-6xl mt-60 px-4 text-left md:ml-8 lg:ml-16">
-      <h1 className="text-5xl  md:text-7xl lg:text-9xl font-bold text-violet-300 mb-6 tracking-tight" data-aos="fade-right">
-      {t.headings.portfolio_intro}
-      </h1>
-          <span
-          className="text-lg md:text-2xl lg:text-3xl text-fuchsia-400 font-extrabold block typing-animation "
+        <img
+          src={Elipse}
+          alt=""
+          aria-hidden
+          className="absolute -top-40 -right-40 w-[1000px] opacity-80"
+        />
+
+        {/* Text */}
+        <div className="relative z-10 px-6 md:px-16" data-aos="fade-right">
+          <h1 className="text-xl md:text-4xl font-extrabold text-violet-300 mb-2">
+            {t.headings.portfolio_intro}
+          </h1>
+
+          <span className="block text-2xl text-fuchsia-400 font-bold mb-6">
+            {t.headings.about_me}
+          </span>
+
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            {t.headings.hello}{" "}
+            <span className="text-fuchsia-400">Gabriel Borges</span>
+          </h2>
+
+          <p className="max-w-xl text-lg text-violet-200 leading-relaxed mb-8">
+            {t.content.introduction}
+          </p>
+
+          <button
+            onClick={() => scrollTo(skillsRef)}
+            className="inline-flex items-center gap-2 px-6 py-3 border border-white rounded-full hover:bg-violet-600 transition"
+          >
+            {t.buttons.learn_more}
+          </button>
+        </div>
+
+        {/* Avatar */}
+        <div
+          className="relative flex justify-center md:justify-end pr-0 md:pr-16"
           data-aos="fade-left"
         >
-          {t.headings.about_me}
+          <img
+            src={eu}
+            alt="Foto de Gabriel Borges"
+            className="w-56 h-56 md:w-[400px] md:h-[400px] rounded-full bg-fuchsia-400 shadow-2xl"
+          />
+        </div>
+      </section>
 
-        </span>
-      <div data-aos="zoom-in">
-        <h1 className="text-2xl md:text-6xl lg:text-4xl font-bold text-violet-300 mb-2 mt-2 px-4">
-         {t.headings.hello} <span className="text-fuchsia-400">Gabriel Borges</span>
-        </h1>
-        <p className="text-sm max-w-sm md:text-base lg:text-xl text-violet-300 leading-relaxed lg:max-w-3xl mb-2 md:mb-4 lg:mb-6">
-        {t.content.introduction}
-        </p>
-      </div>
-      {/* Botão Saiba Mais */}
-    <button
-      className=" px-6 py-3 border-2 m-5 items-center justify-center text-white rounded-full text-lg font-semibold hover:bg-violet-600 transition-all"
-      onClick={() => handleScroll(nextSectionRef)}
-      data-aos="fade-up"
-    >
-      {t.buttons.learn_more}
-    </button>
+      {/* ================= SKILLS ================= */}
+     <section
+  ref={skillsRef}
+  className="relative min-h-screen px-6 py-36 overflow-hidden
+             bg-gradient-to-br from-[#090012] via-[#12001f] to-black"
+>
+  {/* BACKGROUND GLOWS */}
+  <div className="pointer-events-none absolute inset-0">
+    <div className="absolute -top-60 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] 
+                    bg-fuchsia-600/30 rounded-full blur-[220px]" />
+    <div className="absolute bottom-0 right-0 w-[700px] h-[700px] 
+                    bg-purple-700/30 rounded-full blur-[200px]" />
   </div>
 
-  {/* Imagem "eu" destacada à direita */}
-    <div  className="relative m-2 md:absolute md:right-10 lg:right-20  md:bottom-10 flex justify-center md:justify-end md:w-1/2" data-aos="zoom-in-up">
-          <img
-        src={eu}
-        alt="Minha foto"
-        className="w-32 h-32 md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full transition-transform duration-500 hover:scale-105 bg-fuchsia-400"
-      />
-    </div>
-  </section>
-
-
-        {/* Seção de Experiência e Habilidades */}
-        <section
-  ref={nextSectionRef}
-  className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-black  to-purple-900 text-white px-8 py-16 relative overflow-hidden"
->
-<h1 className="text-7xl font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-purple-600 drop-shadow-lg">
-Facimus arte  
-</h1>
-
-  <h2 className="text-4xl md:text-5xl font-bold mb-8 text-purple-400" data-aos="fade-down">
+  {/* TITLE */}
+  <h2
+    data-aos="fade-up"
+    className="relative z-10 text-center text-6xl md:text-7xl font-extrabold 
+               bg-clip-text text-transparent 
+               bg-gradient-to-r from-fuchsia-400 via-purple-400 to-indigo-400 
+               mb-24"
+  >
     {t.headings.experience_skills}
   </h2>
 
-  {/* Cards de Habilidades */}
-  <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full max-w-6xl">
-  {Object.entries(t.content.skills).map(([key, skill], index) => (
-    <div
-      key={key}
-      className="group relative p-6 bg-gradient-to-br from-purple-900 to-fuchsia-800/20 backdrop-blur-lg rounded-xl border-b-4 border-l-2 border-fuchsia-500/70 duration-500 ease-out shadow-lg hover:shadow-fuchsia-500/50 hover:border-fuchsia-300 transform hover:-translate-y-1"
-      data-aos="fade-up"
-      data-aos-delay={index * 100}
-    >
-      {/* Efeito sutil de brilho ao redor no hover */}
-      <div className="absolute inset-0 bg-fuchsia-500 opacity-0 group-hover:opacity-20 blur-3xl transition-all duration-700"></div>
-      
-      <h3 className="text-2xl font-bold text-fuchsia-300 drop-shadow-md mb-4 transition-all duration-500 ease-out group-hover:text-white">
-        {skill.title}
-      </h3>
-      <p className="text-gray-300 text-base leading-relaxed transition-all duration-500 ease-out group-hover:text-gray-100">
-        {skill.description}
-      </p>
-    </div>
-  ))}
-</div>
+  {/* GLASS CARDS */}
+  <div className="relative z-10 grid gap-10 md:grid-cols-3 max-w-7xl mx-auto">
+    {Object.entries(t.content.skills).map(([key, skill], index) => (
+      <div
+        key={key}
+        data-aos="fade-up"
+        data-aos-delay={index * 120}
+        className="
+          relative p-8 rounded-3xl
+          bg-white/10 backdrop-blur-2xl
+          border border-white/20
+          shadow-[0_0_40px_rgba(168,85,247,0.25)]
+          transition-all duration-500
+          hover:bg-white/20 hover:scale-[1.04]
+        "
+      >
+        {/* Glow interno */}
+        <div className="absolute inset-0 rounded-3xl 
+                        bg-gradient-to-br from-fuchsia-500/20 to-purple-700/20 
+                        opacity-0 hover:opacity-100 transition-opacity duration-500" />
 
-        {/* Componente de Ícones */}
-        <div className="flex flex-col justify-center items-center m-10" data-aos="fade-up">
-          <TechIcons />
-          </div>
-          <img
-        src={sculture}
-        alt="escultura"
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 max-w-[34%] opacity-40 h-auto p-3 mix-blend-color-dodge"
-        data-aos="zoom-out-left"
-        data-aos-easing="ease-out-cubic"
-      />
-
-        {/* Botão de Scroll */}
-        <button
-    className="relative mt-10 flex items-center justify-center w-12 h-12 border border-black rounded-full transition-all duration-300 bg-black/60 hover:bg-violet-700"
-    onClick={() => handleScroll(nextSectionRef2)}
-  >
-    <span className="text-purple-200 text-2xl animate-bounce">↓</span>
-  </button>
-</section>
-   
-<section 
-  ref={nextSectionRef2}
-  className="relative min-h-screen bg-gray-950 overflow-hidden"
->
-  {/* Background com overlay mais sutil */}
-  <div className="absolute inset-0">
-    <img
-      src={Img}
-      alt="Developer workspace"
-      className="w-full h-full object-cover object-center opacity-20"
-    />
-    <div className="absolute inset-0 bg-gradient-to-r from-purple-950/90 via-gray-950/90 to-white/10" />
-  </div>
-
-  {/* Conteúdo principal */}
-  <div 
-    ref={sectionRef}
-    className={`relative min-h-screen flex flex-col justify-center items-center px-6 py-20 transition-opacity duration-700 ease-in-out ${isVisible ? "opacity-100" : "opacity-0"}`}
-  >
-    <div className="max-w-4xl mx-auto text-center">
-      {/* Título com efeito sutil */}
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-300">
-          {t.journey.title}
-        </span>
-      </h1>
-      
-      {/* Subtítulo */}
-      <p className="text-lg md:text-xl text-purple-200 mb-12 max-w-2xl mx-auto">
-        {t.journey.description}
-      </p>
-
-      {/* Conteúdo do texto */}
-      <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 md:p-8 text-left">
-        <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">
-          {t.journey.paragraph}
+        <h3 className="relative z-10 text-2xl font-bold text-fuchsia-300 mb-4">
+          {skill.title}
         </h3>
-        <p className="text-gray-300 leading-relaxed md:text-lg">
-          {t.journey.content_journey}
+
+        <p className="relative z-10 text-gray-200 leading-relaxed">
+          {skill.description}
         </p>
       </div>
+    ))}
+  </div>
 
-      {/* Botão com transição suave */}
-      <div className="mt-12">
-        <button
-          onClick={() => handleScroll(nextSectionRef3)}
-          className="group relative inline-flex items-center px-6 py-3 overflow-hidden rounded-full bg-black border border-white hover:bg-purple-500 hover:border-purple-500 transition-all duration-300"
-        >
-          <span className="text-white font-medium mr-2">
-            {t.journey.next}
-          </span>
-          <ChevronDown className="w-5 h-5 text-white group-hover:translate-y-1 transition-transform duration-300" />
-        </button>
-      </div>
+  {/* TECH ICONS GLASS */}
+  <div
+    data-aos="fade-up"
+    className="relative z-10 mt-28 flex justify-center"
+  >
+    <div
+      className="px-10 py-8 rounded-3xl
+                 bg-white/10 backdrop-blur-2xl
+                 border border-white/20
+                 shadow-[0_0_40px_rgba(168,85,247,0.25)]"
+    >
+      <TechIcons />
     </div>
   </div>
 
-  {/* Seções seguintes */}
-  <div className="w-full" ref={nextSectionRef3}>
-    <Projects />
-    <Interests />
+  {/* SCULPTURE */}
+  <img
+    src={sculture}
+    alt=""
+    aria-hidden
+    className="absolute right-0 top-1/2 -translate-y-1/2 
+               max-w-[30%] opacity-20 mix-blend-lighten"
+  />
+
+  {/* NEXT BUTTON */}
+  <div className="relative z-10 flex justify-center mt-28">
+    <button
+      onClick={() => scrollTo(journeyRef)}
+      className="
+        w-14 h-14 flex items-center justify-center
+        rounded-full
+        bg-white/10 backdrop-blur-xl
+        border border-white/20
+        text-white
+        shadow-[0_0_30px_rgba(168,85,247,0.3)]
+        hover:bg-white/20 hover:scale-110
+        transition-all duration-300
+      "
+    >
+      <ChevronDown />
+    </button>
   </div>
 </section>
 
-    </>
+
+      {/* ================= JOURNEY ================= */}
+      <section
+        ref={journeyRef}
+        className="relative min-h-screen flex items-center justify-center px-6 py-24 bg-gray-950"
+      >
+        <div
+          className="max-w-3xl mx-auto text-center"
+          data-aos="fade-up"
+        >
+          <h2 className="text-5xl font-bold text-white mb-4">
+            {t.journey.title}
+          </h2>
+
+          <p className="text-purple-300 mb-10">
+            {t.journey.description}
+          </p>
+
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-left">
+            <h3 className="text-xl font-semibold text-white mb-4">
+              {t.journey.paragraph}
+            </h3>
+            <p className="text-gray-300 leading-relaxed">
+              {t.journey.content_journey}
+            </p>
+          </div>
+
+          <div className="mt-14">
+            <button
+              onClick={() => scrollTo(projectsRef)}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/30 hover:bg-violet-600 transition"
+            >
+              {t.journey.next}
+              <ChevronDown />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= PROJECTS ================= */}
+      <section ref={projectsRef}>
+        <Projects />
+      </section>
+
+    </section>
   );
 };
 
-export default AboutMe
+export default AboutMe;

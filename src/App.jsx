@@ -1,7 +1,7 @@
-import React from 'react'
 import AboutMe from './components/about'
 import Footer from './components/footer'
 import InteractiveMouse from './components/cursorInteractive'
+import Interests from "./components/Interesteds"; // Used in the JSX
 import './App.css'
 
 function App() {
@@ -9,11 +9,12 @@ function App() {
 
   return (
     
-    <div>
+    <main>
       <AboutMe/>
+      <Interests /> 
       <Footer/>
       <InteractiveMouse />
-    </div>
+    </main>
     
   )
 }
