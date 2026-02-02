@@ -47,7 +47,7 @@ const Projects = () => {
 
   return (
     <section id="projects">
-    <section className="relative min-h-screen w-full flex flex-col md:flex-row items-center p-8 gap-6 overflow-hidden bg-neutral-900">
+    <section className="relative min-h-screen w-full flex flex-col md:flex-row items-center p-8 gap-6 overflow-hidden bg-gradient-to-tr from-[#0d0016] via-[#1a001f] to-violet-200">
       {/* Elementos decorativos nos cantos */}
       <motion.img
         src={Ellipse2}

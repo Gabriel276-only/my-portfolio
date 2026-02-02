@@ -93,7 +93,7 @@ const AboutMe = () => {
 
           <button
             onClick={() => scrollTo(skillsRef)}
-            className="inline-flex items-center gap-2 px-6 py-3 border border-white rounded-full hover:bg-violet-600 transition"
+            className="inline-flex items-center gap-2 px-6 py-3 border border-white rounded-full hover:bg-violet transition"
           >
             {t.buttons.learn_more}
           </button>
@@ -217,7 +217,7 @@ const AboutMe = () => {
       {/* ================= JOURNEY ================= */}
       <section
         ref={journeyRef}
-        className="relative min-h-screen flex items-center justify-center px-6 py-24 bg-gray-950"
+        className="relative min-h-screen flex items-center justify-center px-6 py-24 bg-gradient-to-br from-[#0d0016] via-[#1a001f] to-violet-200"
       >
         <div
           className="max-w-3xl mx-auto text-center"
