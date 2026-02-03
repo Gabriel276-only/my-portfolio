@@ -7,7 +7,6 @@ import Projects from "./Projects";
 
 import Elipse from "../assets/Ellipse 1.png";
 import eu from "../assets/Union.png";
-import sculture from "../assets/sculture.png";
 
 import Translations from "../translations.json";
 import { ChevronDown } from "lucide-react";
@@ -187,16 +186,6 @@ const AboutMe = () => {
       <TechIcons />
     </div>
   </div>
-
-  {/* SCULPTURE */}
-  <img
-    src={sculture}
-    alt=""
-    aria-hidden
-    className="absolute right-0 top-1/2 -translate-y-1/2 
-               max-w-[30%] opacity-20 mix-blend-lighten"
-  />
-
   {/* NEXT BUTTON */}
   <div className="relative z-10 flex justify-center mt-28">
     <button
