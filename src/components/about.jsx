@@ -72,8 +72,22 @@ const AboutMe = () => {
           className="absolute -top-40 -right-40 w-[1000px] opacity-80"
         />
 
+           {/* Avatar */}
+        <div
+          className="relative z-10 flex items-center justify-center md:justify-end md:pr-16 order-1 md:order-2"
+          data-aos="fade-left"
+        >
+          <div className="flex items-center justify-center bg-fuchsia-400 rounded-full shadow-2xl">
+          <img
+            src={eu}
+            alt="Foto de Gabriel Borges"
+            className="w-56 h-56 md:w-[400px] md:h-[400px] rounded-full object-cover border border-white/20 backdrop-blur-md transition-all duration-500 ease-out hover:scale-[1.05] hover:border-purple-400/40 hover:shadow-[0_0_80px_rgba(168,85,247,0.45)]"
+          />
+          </div>
+        </div>
+
         {/* Text */}
-        <div className="relative z-10 px-6 md:px-16" data-aos="fade-right">
+        <div className="relative z-10 px-6 md:px-16 order-2 md:order-1" data-aos="fade-right">
           <h1 className="text-xl md:text-4xl font-extrabold text-violet-300 mb-2">
             {t.headings.portfolio_intro}
           </h1>
@@ -99,17 +113,7 @@ const AboutMe = () => {
           </button>
         </div>
 
-        {/* Avatar */}
-        <div
-          className="relative flex justify-center md:justify-end pr-0 md:pr-16"
-          data-aos="fade-left"
-        >
-          <img
-            src={eu}
-            alt="Foto de Gabriel Borges"
-            className="w-56 h-56 md:w-[400px] md:h-[400px] rounded-full bg-fuchsia-400 shadow-2xl"
-          />
-        </div>
+       
       </section>
 
       {/* ================= SKILLS ================= */}
