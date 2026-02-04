@@ -6,7 +6,7 @@
       "learn_more": "Learn More"
     },
     "headings": {
-      "portfolio_intro": "WEB DEVELOPER, FUTURE SOFTWARE ENGINEER & UI/UX DESIGNER.",
+      "portfolio_intro": "DEVELOPER FULL-STACK, FUTURE SOFTWARE ENGINEER. ",
       "about_me": "About Me",
       "hello": "Hello, I'm"
     },
@@ -27,13 +27,28 @@
         }
       }
     },
- "journey": {
+"journey": {
+  "label": "Journey",
   "title": "My Journey",
-  "description": "A path shaped by curiosity, dedication, and continuous growth.",
-  "paragraph": "From an early age, technology became more than curiosity — it became purpose.",
-  "content_journey": "My journey into programming began when I was 10 years old, driven by a deep curiosity to understand how things worked behind the screen. With limited access to paid resources, I learned through self-study, experimentation, and persistence. At 14, this passion found direction when I joined IFRJ in Engenheiro Paulo de Frontin, enrolling in the Internet Technology program. There, I expanded my perspective on technology by engaging in academic projects, scientific research, article publications, and social initiatives, including teaching computer classes to underprivileged communities and elderly people. Now, as a graduate, I continue to refine my skills in development and design, strengthen my professional network, and evolve not only technically but also personally. Each step of this journey brings me closer to my goal: building meaningful, well-crafted digital experiences that create real impact.",
+  "description": "A path built through curiosity, learning, and constant improvement.",
+  "steps": [
+    {
+      "title": "First Steps",
+      "content": "I started getting into programming around the age of 10, during the pandemic, through free courses and online content. That was when I learned the basics of HTML, CSS, and JavaScript and began to understand how things work behind the screen."
+    },
+    {
+      "title": "Learning & Practice",
+      "content": "As my interest grew, I decided to pursue this path academically and joined IFRJ in Engenheiro Paulo de Frontin. There, I strengthened my foundations in logic, algorithms, and web development, while continuing to study on my own through courses, documentation, and tutorials in both Portuguese and English."
+    },
+    {
+      "title": "Continuous Evolution",
+      "content": "Today, I study Software Engineering and keep building personal projects, always focused on learning, improving, and creating digital solutions that are useful, well-designed, and meaningful."
+    }
+  ],
   "next": "Next Section"
 }
+
+
   },
 
   "pt": {
@@ -43,7 +58,7 @@
       "learn_more": "Saiba Mais"
     },
     "headings": {
-      "portfolio_intro": "DESENVOLVEDOR WEB, FUTURO ENGENHEIRO DE SOFTWARE & DESIGNER UI/UX.",
+      "portfolio_intro": "DESENVOLVEDOR FULL-STACK, FUTURO ENGENHEIRO DE SOFTWARE .",
       "about_me": "Sobre Mim",
       "hello": "Olá, eu sou"
     },
@@ -64,11 +79,24 @@
         }
       }
     },
-      "journey": {
+     "journey": {
+  "label": "Jornada",
   "title": "Minha Jornada",
-  "description": "Uma trajetória construída por curiosidade, esforço e evolução constante.",
-  "paragraph": "Desde muito cedo, a tecnologia deixou de ser apenas curiosidade e passou a ser propósito.",
-  "content_journey": "Meu primeiro contato com programação aconteceu aos 10 anos, movido pela vontade de entender como as coisas funcionavam por trás da tela. Mesmo sem acesso a cursos pagos ou recursos avançados, aprendi de forma autodidata, explorando, errando e evoluindo a cada tentativa. Aos 14 anos, essa paixão ganhou direção quando ingressei no IFRJ de Engenheiro Paulo de Frontin, no curso de Tecnologia para Internet. Ali, ampliei minha visão sobre o impacto da tecnologia, participando de projetos acadêmicos, pesquisas científicas, publicações de artigos e ações sociais, como aulas de informática para comunidades carentes e idosos. Hoje, formado, sigo em constante evolução, aprofundando meus conhecimentos em desenvolvimento e design, construindo um networking sólido e aprimorando não apenas minhas habilidades técnicas, mas também minha mentalidade profissional. Cada etapa dessa jornada reforça meu objetivo: criar soluções digitais relevantes, humanas e bem construídas.",
+  "description": "Uma trajetória construída por curiosidade, aprendizado e evolução constante.",
+  "steps": [
+    {
+      "title": "Primeiros Passos",
+      "content": "Comecei a me interessar por programação por volta dos 10 anos, durante a pandemia, por meio de cursos livres e conteúdos online. Foi nesse período que tive contato com HTML, CSS e JavaScript e comecei a entender como as coisas funcionavam por trás da tela."
+    },
+    {
+      "title": "Aprendizado e Prática",
+      "content": "Com o crescimento desse interesse, ingressei no IFRJ de Engenheiro Paulo de Frontin, no curso de Informática para Internet. Lá, consolidei minha base em lógica, algoritmos e desenvolvimento web, enquanto continuava estudando por conta própria com cursos, documentação e tutoriais em português e inglês."
+    },
+    {
+      "title": "Evolução Contínua",
+      "content": "Hoje, estudo Engenharia de Software e desenvolvo projetos próprios, sempre buscando aprender mais e criar soluções digitais úteis, bem pensadas e com impacto real."
+    }
+  ],
   "next": "Próxima Seção"
 }
 

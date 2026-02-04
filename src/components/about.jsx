@@ -40,7 +40,7 @@ const AboutMe = () => {
   return (
     <section id="about-me" className=" text-white overflow-hidden">
 
-      <section className="relative min-h-screen grid md:grid-cols-2 items-center bg-gradient-to-tr from-purple-700 to-purple-950 px-6 py-24">
+      <section className="relative min-h-screen grid md:grid-cols-2 items-center bg-gray-300 px-6 py-24">
         <div className="absolute top-6 right-6 z-20 flex gap-2">
           <button
             onClick={() => setLanguage("pt")}
@@ -68,7 +68,13 @@ const AboutMe = () => {
           src={Elipse}
           alt=""
           aria-hidden
-          className="absolute -top-40 -right-40 w-[1000px] opacity-80"
+          className="absolute -top-40 -right-40 w-[40em] opacity-90"
+        />
+         <img
+          src={Elipse}
+          alt=""
+          aria-hidden
+          className="absolute -bottom-40 -right-10 w-[20em] opacity-90 rotate-90"
         />
 
            {/* Avatar */}
@@ -87,26 +93,26 @@ const AboutMe = () => {
 
         {/* Text */}
         <div className="relative z-10 px-6 md:px-16 order-2 md:order-1" data-aos="fade-right">
-          <h1 className="text-xl md:text-4xl font-extrabold text-violet-300 mb-2">
+          <h1 className="text-xl md:text-6xl font-extrabold text-violet-400 mb-2 tracking-tighter leading-tight">
             {t.headings.portfolio_intro}
           </h1>
 
-          <span className="block text-2xl text-fuchsia-400 font-bold mb-6">
+          <span className="block text-2xl text-fuchsia-500 font-bold mb-6 typing-animation">
             {t.headings.about_me}
           </span>
 
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-violet-500">
             {t.headings.hello}{" "}
-            <span className="text-fuchsia-400">Gabriel Borges</span>
+            <span className="text-fuchsia-500">Gabriel Borges</span>
           </h2>
 
-          <p className="max-w-xl text-lg text-violet-200 leading-relaxed mb-8">
+          <p className="max-w-xl text-lg text-violet-500 leading-relaxed mb-8">
             {t.content.introduction}
           </p>
 
           <button
             onClick={() => scrollTo(skillsRef)}
-            className="inline-flex items-center gap-2 px-6 py-3 border border-white rounded-full hover:bg-violet transition"
+            className="inline-flex items-center gap-2 px-6 py-3 border border-violet-400 text-violet-500 rounded-full hover:bg-violet-400 hover:text-white transition"
           >
             {t.buttons.learn_more}
           </button>
@@ -116,89 +122,67 @@ const AboutMe = () => {
       </section>
 
       {/* ================= SKILLS ================= */}
-     <section
+   <section
   ref={skillsRef}
-  className="relative min-h-screen px-6 py-36 overflow-hidden
-             bg-gradient-to-br from-[#090012] via-[#12001f] to-black"
+  className="relative min-h-screen px-6 py-36 bg-gray-300 flex flex-col items-center"
 >
-  {/* BACKGROUND GLOWS */}
-  <div className="pointer-events-none absolute inset-0">
-    <div className="absolute -top-60 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] 
-                    bg-fuchsia-600/30 rounded-full blur-[220px]" />
-    <div className="absolute bottom-0 right-0 w-[700px] h-[700px] 
-                    bg-purple-700/30 rounded-full blur-[200px]" />
-  </div>
-
   {/* TITLE */}
   <h2
     data-aos="fade-up"
-    className="relative z-10 text-center text-6xl md:text-7xl font-extrabold 
-               bg-clip-text text-transparent 
-               bg-gradient-to-r from-fuchsia-400 via-purple-400 to-indigo-400 
-               mb-24"
+    className="text-center text-6xl md:text-7xl font-extrabold text-gray-900 mb-24"
   >
     {t.headings.experience_skills}
   </h2>
 
-  {/* GLASS CARDS */}
-  <div className="relative z-10 grid gap-10 md:grid-cols-3 max-w-7xl mx-auto">
+  {/* SKILL PANELS */}
+  <div className="grid gap-10 md:grid-cols-3 max-w-7xl w-full">
     {Object.entries(t.content.skills).map(([key, skill], index) => (
       <div
         key={key}
         data-aos="fade-up"
         data-aos-delay={index * 120}
         className="
-          relative p-8 rounded-3xl
-          bg-white/10 backdrop-blur-2xl
-          border border-white/20
-          shadow-[0_0_40px_rgba(168,85,247,0.25)]
-          transition-all duration-500
-          hover:bg-white/20 hover:scale-[1.04]
+          group relative bg-white/40 rounded-2xl p-8
+          border border-gray-200
+          transition-all duration-300
+          hover:-translate-y-2 hover:shadow-xl
         "
       >
-        {/* Glow interno */}
-        <div className="absolute inset-0 rounded-3xl 
-                        bg-gradient-to-br from-fuchsia-500/20 to-purple-700/20 
-                        opacity-0 hover:opacity-100 transition-opacity duration-500" />
+        {/* Accent bar */}
+        <span
+          className="
+            absolute left-0 top-0 h-full w-1
+            bg-gradient-to-b from-violet-600 to-fuchsia-500
+            rounded-l-2xl
+          "
+        />
 
-        <h3 className="relative z-10 text-2xl font-bold text-fuchsia-300 mb-4">
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">
           {skill.title}
         </h3>
 
-        <p className="relative z-10 text-gray-200 leading-relaxed">
+        <p className="text-gray-600 leading-relaxed">
           {skill.description}
         </p>
       </div>
     ))}
   </div>
 
-  {/* TECH ICONS GLASS */}
-  <div
-    data-aos="fade-up"
-    className="relative z-10 mt-28 flex justify-center"
-  >
-    <div
-      className="px-10 py-8 rounded-3xl
-                 bg-white/10 backdrop-blur-2xl
-                 border border-white/20
-                 shadow-[0_0_40px_rgba(168,85,247,0.25)]"
-    >
+  {/* TECH ICONS */}
+  <div data-aos="fade-up" className="mt-24">
+    <div className="bg-white/10 border border-gray-200/ rounded-2xl px-10 py-8 shadow-md">
       <TechIcons />
     </div>
   </div>
+
   {/* NEXT BUTTON */}
-  <div className="relative z-10 flex justify-center mt-28">
+  <div className="mt-24">
     <button
       onClick={() => scrollTo(journeyRef)}
       className="
         w-14 h-14 flex items-center justify-center
-        rounded-full
-        bg-white/10 backdrop-blur-xl
-        border border-white/20
-        text-white
-        shadow-[0_0_30px_rgba(168,85,247,0.3)]
-        hover:bg-white/20 hover:scale-110
-        transition-all duration-300
+        rounded-full bg-gray-900 text-white
+        hover:scale-110 transition
       "
     >
       <ChevronDown />
@@ -206,44 +190,72 @@ const AboutMe = () => {
   </div>
 </section>
 
-
       {/* ================= JOURNEY ================= */}
-      <section
-        ref={journeyRef}
-        className="relative min-h-screen flex items-center justify-center px-6 py-24 bg-gradient-to-br from-[#0d0016] via-[#1a001f] to-violet-200"
-      >
+    <section ref={journeyRef}
+  className="relative min-h-screen px-6 py-32 bg-neutral-950 text-white"
+>
+  <div className="max-w-6xl mx-auto">
+
+    {/* TITLE */}
+    <div className="mb-32 text-center" data-aos="fade-up">
+      <span className="block text-sm tracking-widest text-violet-400 uppercase mb-4">
+        {t.journey.label}
+      </span>
+
+      <h2 className="text-6xl md:text-8xl font-extrabold leading-tight">
+        {t.journey.title}
+      </h2>
+
+      <p className="mt-6 text-xl text-neutral-400 max-w-2xl mx-auto">
+        {t.journey.description}
+      </p>
+    </div>
+
+    {/* TIMELINE */}
+    <div className="relative max-w-4xl mx-auto pl-12">
+      <span className="absolute left-3 top-0 h-full w-px bg-neutral-700" />
+
+      {t.journey.steps.map((step, index) => (
         <div
-          className="max-w-3xl mx-auto text-center"
+          key={index}
           data-aos="fade-up"
+          data-aos-delay={index * 120}
+          className="relative mb-24"
         >
-          <h2 className="text-5xl font-bold text-white mb-4">
-            {t.journey.title}
-          </h2>
+          <span className="absolute -left-[20px] top-2 w-4 h-4 rounded-full bg-violet-500" />
 
-          <p className="text-purple-300 mb-10">
-            {t.journey.description}
+          <h3 className="text-3xl font-bold mb-4">
+            {step.title}
+          </h3>
+
+          <p className="text-neutral-300 leading-relaxed">
+            {step.content}
           </p>
-
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-left">
-            <h3 className="text-xl font-semibold text-white mb-4">
-              {t.journey.paragraph}
-            </h3>
-            <p className="text-gray-300 leading-relaxed">
-              {t.journey.content_journey}
-            </p>
-          </div>
-
-          <div className="mt-14">
-            <button
-              onClick={() => scrollTo(projectsRef)}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/30 hover:bg-violet-600 transition"
-            >
-              {t.journey.next}
-              <ChevronDown />
-            </button>
-          </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+
+
+
+    {/* CTA */}
+    <div className="mt-32 flex justify-center">
+      <button
+        onClick={() => scrollTo(projectsRef)}
+        className="
+          group inline-flex items-center gap-3 border-2 rounded-full px-8 py-2 border-white/30
+          text-lg font-semibold
+          text-white
+          hover:text-violet-400
+          transition
+        "
+      >
+        {t.journey.next}
+        <ChevronDown className="group-hover:translate-y-1 transition" />
+      </button>
+    </div>
+
+</section>
 
       {/* ================= PROJECTS ================= */}
       <section ref={projectsRef}>

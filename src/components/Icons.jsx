@@ -27,7 +27,7 @@ const TechIcons = () => {
       ].map(({ icon: Icon, name }, index) => (
         <div
           key={index}
-          className="flex flex-col items-center text-white hover:text-purple-400 transition-all pr-1 relative"
+          className="flex flex-col items-center text-purple-500 hover:text-purple-400 transition-all pr-1 relative"
         >
           <Icon className="w-8 h-8" />
           <span className="mt-2 text-sm md:text-base">{name}</span>
