@@ -3,15 +3,16 @@
     "buttons": {
       "portuguese": "Português",
       "english": "English",
-      "learn_more": "Learn More"
+      "learn_more": "Explore my work",
+      "contact": "Contact me"
     },
     "headings": {
-      "portfolio_intro": "DEVELOPER FULL-STACK, FUTURE SOFTWARE ENGINEER. ",
-      "about_me": "About Me",
+      "portfolio_intro": "SITES AND WEB SYSTEMS FOR YOUR BUSINESS",
+      "about_me": "Web developer & designer",
       "hello": "Hello, I'm"
     },
     "content": {
-      "introduction": "I'm a Developer and Designer based in Brazil, passionate about creating modern, functional and visually stunning digital experiences. I specialize in building interactive interfaces and I'm always improving my skills in UI/UX design and Development. I love exploring new technologies and turning ideas into reality through code and design.",
+      "introduction": "I build clear, responsive websites and web systems for businesses. I combine interface design and development to turn ideas into useful digital experiences.",
       "skills": {
         "web_dev": {
           "title": "Web Development",
@@ -55,15 +56,16 @@
     "buttons": {
       "portuguese": "Português",
       "english": "English",
-      "learn_more": "Saiba Mais"
+      "learn_more": "Ver projetos",
+      "contact": "Fale comigo"
     },
     "headings": {
-      "portfolio_intro": "DESENVOLVEDOR FULL-STACK, FUTURO ENGENHEIRO DE SOFTWARE .",
-      "about_me": "Sobre Mim",
+      "portfolio_intro": "SITES E SISTEMAS WEB PARA O SEU NEGÓCIO",
+      "about_me": "Desenvolvedor web e designer",
       "hello": "Olá, eu sou"
     },
     "content": {
-      "introduction": "Sou um Desenvolvedor e Designer do Brasil, apaixonado por criar experiências digitais modernas, funcionais e visualmente impressionantes. Especializo-me na construção de interfaces interativas e estou sempre aprimorando minhas habilidades em design UI/UX e desenvolvimento. Adoro explorar novas tecnologias e transformar ideias em realidade através do código e do design.",
+      "introduction": "Crio sites e sistemas web responsivos para negócios. Uno design de interfaces e desenvolvimento para transformar ideias em experiências digitais úteis.",
       "skills": {
         "web_dev": {
           "title": "Desenvolvimento Web",

@@ -1,84 +1,22 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-
-
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 12ch; } /* Ajuste de acordo com o conteúdo */
-}
-  
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+  min-width: 320px;
+  overflow-x: hidden;
 }
 
-.bebas-neue-regular {
-  font-family: "Bebas Neue";
-  font-weight: 600;
-  font-size: 9.5em;
-  line-height: 1em;
-  letter-spacing: 0.01em;
-  font-style: normal;
-}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-.section {
-  scroll-snap-align: start;
-  height: 100vh;
-}
-
-
-
-
-.typing-animation {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid #a855f7;
-    width: 0;
-    animation: typing 2s steps(15, end) 1s forwards, typingEnd 0.5s ease-out forwards;
-}
-  
-@keyframes glow {
-    0%, 100% { box-shadow: 0px 0px 20px 5px rgba(128, 0, 128, 0.6); }
-    50% { box-shadow: 0px 0px 50px 10px rgba(128, 0, 128, 0.8); }
-}
-
-.animate-glow {
-    animation: glow 2s infinite alternate;
-}
-
-.typing-animation::after {
-    content: "|";
-    animation: blink 1s infinite;
-}
-
-
-@keyframes blink {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 640px) {
-  .typing-animation {
-    font-size: 1rem; /* Ajusta o tamanho para telas pequenas */
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
-
-.image-container img {
-    filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.6)); /* Brilho roxo suave */
-    transition: transform 0.3s ease-in-out;
-}
-
-.image-container img:hover {
-    transform: scale(1.05); /* Pequeno zoom ao passar o mouse */
-}
-
-

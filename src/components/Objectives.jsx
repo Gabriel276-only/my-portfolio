@@ -66,9 +66,14 @@ const Objectives = () => {
         <p className="text-sm uppercase tracking-widest text-white/60">
           Are you planning a project? | Você está planejando um projeto?
         </p>
-        <button className="mt-6 inline-flex items-center gap-3 px-10 py-3 border border-white/40 rounded-full text-sm uppercase tracking-widest transition-all duration-300 hover:bg-white hover:text-black">
-          Contact Me <span className="text-lg">▼</span>
-        </button>
+        <a
+          href="https://mail.google.com/mail/?view=cm&to=gabrielmagaborges%40gmai.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex min-h-12 items-center gap-3 rounded-full bg-violet-400 px-10 py-3 text-sm font-semibold uppercase tracking-widest text-neutral-950 transition-colors hover:bg-violet-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-200"
+        >
+          Contact Me <span aria-hidden="true" className="text-lg">↗</span>
+        </a>
       </div>
     </section>
   );

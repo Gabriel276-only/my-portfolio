@@ -5,21 +5,23 @@ const Footer = () => {
   return (
     <footer className="bg-black text-gray-300 py-6 text-center">
       <div className="flex justify-center space-x-6 mb-4">
-        <a href="https://github.com/Gabriel276-only" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-white text-2xl transition">
+        <a aria-label="GitHub de Gabriel Borges" href="https://github.com/Gabriel276-only" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-white text-2xl transition">
           <FaGithub />
         </a>
-        <a href="https://linkedin.com/in/gabriel-borges-ab85b1337" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-white text-2xl transition">
+        <a aria-label="LinkedIn de Gabriel Borges" href="https://linkedin.com/in/gabriel-borges-ab85b1337" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-white text-2xl transition">
           <FaLinkedin />
         </a>
         <a 
-  href="#" 
-  onClick={() => window.location.href = "mailto:gabrielmagaborges@gmail.com"} 
+  aria-label="Enviar e-mail para Gabriel Borges"
+  href="https://mail.google.com/mail/?view=cm&to=gabrielmagaborges%40gmai.com"
+  target="_blank"
+  rel="noopener noreferrer"
   className="text-purple-400 hover:text-white text-2xl transition"
 >
   <FaEnvelope />
 </a>
 
-<a href="https://www.instagram.com/dev_borgess/" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-white text-2xl transition">
+<a aria-label="Instagram de Gabriel Borges" href="https://www.instagram.com/dev_borgess/" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-white text-2xl transition">
           <FaInstagram />
         </a>
 

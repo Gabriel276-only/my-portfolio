@@ -25,6 +25,10 @@ const AboutMe = () => {
   const [language, setLanguage] = useState("en");
   const t = Translations[language];
 
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
   /* =========================
      REFS
   ========================== */
@@ -40,7 +44,7 @@ const AboutMe = () => {
   return (
     <section id="about-me" className=" text-white overflow-hidden">
 
-      <section className="relative min-h-screen grid md:grid-cols-2 items-center bg-gray-300 px-6 py-24">
+      <section className="relative isolate min-h-[85svh] grid md:grid-cols-2 items-center bg-neutral-950 px-6 py-24">
         <div className="absolute top-6 right-6 z-20 flex gap-2">
           <button
             onClick={() => setLanguage("pt")}
@@ -82,7 +86,7 @@ const AboutMe = () => {
           className="relative z-10 flex items-center justify-center md:justify-end md:pr-16 order-1 md:order-2"
           data-aos="fade-left"
         >
-          <div className="flex items-center justify-center bg-fuchsia-400 rounded-full shadow-2xl">
+          <div className="flex items-center justify-center rounded-full bg-violet-900 shadow-2xl">
           <img
             src={eu}
             alt="Foto de Gabriel Borges"
@@ -93,29 +97,37 @@ const AboutMe = () => {
 
         {/* Text */}
         <div className="relative z-10 px-6 md:px-16 order-2 md:order-1" data-aos="fade-right">
-          <h1 className="text-xl md:text-6xl font-extrabold text-violet-400 mb-2 tracking-tighter leading-tight">
+          <h1 className="max-w-3xl text-4xl font-extrabold text-white mb-4 tracking-tight leading-[1.05] md:text-6xl">
             {t.headings.portfolio_intro}
           </h1>
 
-          <span className="block text-2xl text-fuchsia-500 font-bold mb-6 typing-animation">
+          <span className="block text-xl text-violet-300 font-semibold mb-6 md:text-2xl">
             {t.headings.about_me}
           </span>
 
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-violet-500">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
             {t.headings.hello}{" "}
-            <span className="text-fuchsia-500">Gabriel Borges</span>
+            <span className="text-violet-300">Gabriel Borges</span>
           </h2>
 
-          <p className="max-w-xl text-lg text-violet-500 leading-relaxed mb-8">
+          <p className="max-w-xl text-base text-neutral-300 leading-relaxed mb-8 md:text-lg">
             {t.content.introduction}
           </p>
 
           <button
-            onClick={() => scrollTo(skillsRef)}
-            className="inline-flex items-center gap-2 px-6 py-3 border border-violet-400 text-violet-500 rounded-full hover:bg-violet-400 hover:text-white transition"
+            onClick={() => scrollTo(projectsRef)}
+            className="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-white transition hover:border-violet-300 hover:bg-violet-300 hover:text-neutral-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300"
           >
             {t.buttons.learn_more}
           </button>
+          <a
+            href="https://mail.google.com/mail/?view=cm&to=gabrielmagaborges%40gmai.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-3 inline-flex min-h-12 items-center rounded-full bg-violet-400 px-6 py-3 font-semibold text-neutral-950 transition hover:bg-violet-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-200"
+          >
+            {t.buttons.contact}
+          </a>
         </div>
 
        
@@ -124,12 +136,12 @@ const AboutMe = () => {
       {/* ================= SKILLS ================= */}
    <section
   ref={skillsRef}
-  className="relative min-h-screen px-6 py-36 bg-gray-300 flex flex-col items-center"
+  className="relative min-h-screen px-6 py-28 bg-neutral-950 flex flex-col items-center"
 >
   {/* TITLE */}
   <h2
     data-aos="fade-up"
-    className="text-center text-6xl md:text-7xl font-extrabold text-gray-900 mb-24"
+    className="text-center text-4xl md:text-6xl font-extrabold text-white mb-16 md:mb-20"
   >
     {t.headings.experience_skills}
   </h2>
@@ -142,8 +154,8 @@ const AboutMe = () => {
         data-aos="fade-up"
         data-aos-delay={index * 120}
         className="
-          group relative bg-white/40 rounded-2xl p-8
-          border border-gray-200
+          group relative bg-white/[0.04] rounded-2xl p-8
+          border border-white/10
           transition-all duration-300
           hover:-translate-y-2 hover:shadow-xl
         "
@@ -157,11 +169,11 @@ const AboutMe = () => {
           "
         />
 
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">
+        <h3 className="text-2xl font-bold text-white mb-4">
           {skill.title}
         </h3>
 
-        <p className="text-gray-600 leading-relaxed">
+        <p className="text-neutral-300 leading-relaxed">
           {skill.description}
         </p>
       </div>
@@ -170,7 +182,7 @@ const AboutMe = () => {
 
   {/* TECH ICONS */}
   <div data-aos="fade-up" className="mt-24">
-    <div className="bg-white/10 border border-gray-200/ rounded-2xl px-10 py-8 shadow-md">
+    <div className="bg-white/[0.04] border border-white/10 rounded-2xl px-6 py-8 shadow-md">
       <TechIcons />
     </div>
   </div>
@@ -259,7 +271,7 @@ const AboutMe = () => {
 
       {/* ================= PROJECTS ================= */}
       <section ref={projectsRef}>
-        <Projects />
+        <Projects language={language} />
       </section>
 
     </section>
