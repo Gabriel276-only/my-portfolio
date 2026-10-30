@@ -121,7 +121,7 @@ const AboutMe = () => {
             {t.buttons.learn_more}
           </button>
           <a
-            href="https://mail.google.com/mail/?view=cm&to=gabrielmagaborges%40gmai.com"
+            href="https://mail.google.com/mail/?view=cm&to=gabrielmagaborges%40gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-3 inline-flex min-h-12 items-center rounded-full bg-violet-400 px-6 py-3 font-semibold text-neutral-950 transition hover:bg-violet-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-200"

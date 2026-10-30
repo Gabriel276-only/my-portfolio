@@ -13,7 +13,7 @@ const Footer = () => {
         </a>
         <a 
   aria-label="Enviar e-mail para Gabriel Borges"
-  href="https://mail.google.com/mail/?view=cm&to=gabrielmagaborges%40gmai.com"
+  href="https://mail.google.com/mail/?view=cm&to=gabrielmagaborges%40gmail.com"
   target="_blank"
   rel="noopener noreferrer"
   className="text-purple-400 hover:text-white text-2xl transition"
